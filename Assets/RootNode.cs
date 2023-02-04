@@ -2,11 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// class for Types
-public class Type
-{
-   
-}
 
 public class RootNode : MonoBehaviour
 {
@@ -14,18 +9,55 @@ public class RootNode : MonoBehaviour
     List<GameObject> nodeList;
 
     // How many Nodes are currently claimed
+    // tentative to change because 
     public int numNodesClaimed;
 
-    // Types 1 and 2 initialized, can change starting count 
-    public int type1Count;
-    public int type2Count;
-
-    // base amount incremented / generated for 
-    private int addType1 = 1;
-    private int addType2 = 0;
+    // growth variables
+    private int passiveGrowth = 0; // how much growth rate without pressing (defense)
+    private int activeGrowth = 1; // how much growth rate when clicking (attack)
 
 
-    private bool addMore = true;
+    // getters
+
+    // useful when needing the current growth rate, but also for UI
+
+    public int getPassiveGrowth()
+    {
+        return passiveGrowth;
+    }
+
+    public int getActiveGrowth()
+    {
+        return activeGrowth;
+    }
+
+    // setters
+
+    // Used for rewards for claiming more nodes 
+    public void changePassiveGrowth(int changeAmount)
+    {
+        if (passiveGrowth + changeAmount < 0)
+        {
+            passiveGrowth = 0;
+            
+        }
+        else
+        {
+            passiveGrowth += changeAmount;
+        }
+    }
+
+    public void changeActiveGrowth(int changeAmount)
+    {
+        if (activeGrowth + changeAmount < 1)
+        {
+            activeGrowth = 1;
+        }
+        else
+        {
+            activeGrowth += changeAmount;
+        }
+    }
 
     // Win Condition for Game
 
@@ -38,64 +70,6 @@ public class RootNode : MonoBehaviour
         }
     }
 
-    // getter functions
-
-    // getting current amount of a type
-    public int getTypeAmount(int typeNumber)
-    {
-        if (typeNumber == 1)
-        {
-            return type1Count;
-        }
-        else if (typeNumber == 2) {
-            return type2Count;
-        }
-
-        return 0;
-    }
-
-    // getting current amount added of a type
-    public int getAddAmount(int typeNumber)
-    {
-        if (typeNumber == 1)
-        {
-            return addType1;
-        }
-        else if (typeNumber == 2)
-        {
-            return addType2;
-        }
-
-        return 0;
-    }
-
-    // adding or subtracting amount when claiming / unclaiming a node
-    public void increaseAddAmount(int typeNumber, int amountToAdd)
-    {
-        if (typeNumber == 1)
-        {
-            addType1 += amountToAdd;
-        }
-        else if (typeNumber == 2)
-        {
-            addType2 += amountToAdd;
-        }
-
-    }
-
-    // subtract resources needed for claiming
-    // make sure only to call WHEN WE HAVE ENOUGH
-    public void subtractResources(int typeNumber, int amountToSub)
-    {
-        if (typeNumber == 1 && getTypeAmount(typeNumber) >= amountToSub)
-        {
-            type1Count -= amountToSub;
-
-        } else if (typeNumber == 2 && getTypeAmount(typeNumber) >= amountToSub)
-        {
-            type2Count -= amountToSub;
-        }
-    }
 
     // Start is called before the first frame update
     void Start()
@@ -105,12 +79,7 @@ public class RootNode : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        // add more resources by your amountToAdd by pressing Spacebar
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            type1Count += addType1;
-            type2Count += addType2;
-        }
+    { 
+
     }
 }

@@ -23,20 +23,30 @@ public class NodeController : MonoBehaviour
     public bool isClaimed; // have we claimed this?
     public bool isBeginningNode; // is this one of the original 3 nodes
 
-    // amount & type needed to claim
+    // push and pull attributes
+    public int curDistanceToClaim; // distance needed to claim the next node, if 0 we can claim
+    public int maxDistanceToClaim; // if curDistanceToClaim == maxDistanceToClaim, we have to unclaim...
+    public int pushBack; // updates on time interval to add distance to 
 
-    public int TypeNumberNeeded;
-    public int amountNeeded;
 
-    // once claimed, tells us what the root node benefits from
+    // benefits for getting node
+    public int addedPassive;
+    public int addedActive;
 
-    public int TypeNumberGiven; // what type are we increasing production of 
-    public int amountGiven; // amount added per frame etc
-    
+    // Mouse Button Down Function
+    // activates everytime mouse cursor is pressed on collider of node
 
-    // add extra benefits here maybe
+    void OnMouseDown()
+    {
+        curDistanceToClaim -= myRoot.getActiveGrowth();
 
-    // getter functions
+        if (curDistanceToClaim <= 0)
+        {
+            isClaimed = true;
+        }
+    }
+
+    // getters 
 
     public bool isNodeClaimed()
     {
@@ -53,29 +63,7 @@ public class NodeController : MonoBehaviour
     void Update()
     {
 
-
-        // ensures that the previous node must be claimed before we can even consider claiming
-        if (Input.GetMouseButtonDown(0) && (isBeginningNode || previousnode.isNodeClaimed()))
-        {
-            // if it isn't claimed and we have enough resources, we claim
-            if (!isClaimed && myRoot.getTypeAmount(TypeNumberNeeded) >= amountNeeded)
-            {
-                isClaimed = true; // we've now claimed this node
-
-                currentNode.GetComponent<Renderer>().material.color = new(0, 255, 0); // change color
-
-                // subtract resources needed for claiming
-                myRoot.subtractResources(TypeNumberNeeded, amountNeeded); 
-
-                // get increased production benefits for claiming this node 
-                myRoot.increaseAddAmount(TypeNumberGiven, amountGiven);
-
-                // increment number of nodes claimed.
-                myRoot.numNodesClaimed++;
-            }
-        }
-
-        // need condition on what to do when planet starts to push back
+        // need condition on what to do when planet starts to push back & for passive growth
         
     }
 }
