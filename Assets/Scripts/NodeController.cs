@@ -57,6 +57,7 @@ public class NodeController : MonoBehaviour
     void OnMouseDown()
     {
         // if previous node isn't claimed, we can't touch this one yet
+        // if it's a beginning node, we shouldn't be bale
         if (isBeginningNode || !previousNode.isNodeClaimed())
         {
             return;
@@ -98,7 +99,7 @@ public class NodeController : MonoBehaviour
         {
             currentNode.GetComponent<Renderer>().material.color = new(0, 0, 255);
         }
-        else
+        else // unreachable
         {
             currentNode.GetComponent<Renderer>().material.color = new(255, 0, 0);
         }
@@ -107,6 +108,13 @@ public class NodeController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        // lose condition goes here... if we lose initial beginner nodes, the planet can attack the main root and we die
+
+        /*
+           
+        */ 
+        
         if (isFinalNode && isNodeClaimed()) // meaning we're done with this path
         {
             return;
@@ -119,7 +127,9 @@ public class NodeController : MonoBehaviour
             return;
         }
 
-        // if the planet has pushed back all the way, we unclaim the previous node and have to reclaim
+        // if the planet has pushed back all the way, we unclaim the previous node and have to reclaim the previous one to start getting this one
+        // again
+
 
         if (curDistanceToClaim >= maxDistanceToClaim && !isFinalNode)
         {
@@ -158,8 +168,6 @@ public class NodeController : MonoBehaviour
                 curDistanceToClaim += pushBack;
             }
         }
-
-        
 
         // if this is a beginning node and unclaimed -> lose the game! 
         
