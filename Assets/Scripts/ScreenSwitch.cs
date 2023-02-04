@@ -5,34 +5,25 @@ using UnityEngine.SceneManagement;
 
 public class ScreenSwitch : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public void ToCredits()
     {
-        
+        SceneManager.LoadScene("CreditsScreen");
     }
 
-    // Update is called once per frame
-    public void ScreenChange()
+    public void ToTitle()
     {
-       if (this.gameObject.tag == "play")
-        {
-            SceneManager.LoadScene("Game"); //edit to actual scene name
-        }
-
-        if (this.gameObject.tag == "credits")
-        {
-            SceneManager.LoadScene("CreditsScreen");
-        }
-
-        if (this.gameObject.tag == "quit")
-        {
-            SceneManager.LoadScene("TitleScreen");
-        }
-
-        if (this.gameObject.tag == "continue")
-        {
-            SceneManager.LoadScene("something"); //what does this go to
-        }
-
+        SceneManager.LoadScene("TitleScreen");
     }
+    public void ToTutorial()
+    {
+        SceneManager.LoadScene("TutorialScreen");
+    }
+
+    public void ToGame()
+    {
+        SceneManager.LoadScene("Game"); //change to actual game
+    }
+
+   
+
 }
