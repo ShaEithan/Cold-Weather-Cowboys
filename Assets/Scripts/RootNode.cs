@@ -59,6 +59,12 @@ public class RootNode : MonoBehaviour
         }
     }
 
+    
+    public void changeNumClaimed(int amount)
+    {
+        numNodesClaimed += amount;
+    }
+
     // Win Condition for Game
 
     public void winCondition()

@@ -202,13 +202,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 901082a6ac0f34969a39fbe181965d6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextNode: {fileID: 0}
+  nextNode: {fileID: 1924617867}
   currentNode: {fileID: 1631622127}
-  previousnode: {fileID: 0}
+  previousNode: {fileID: 0}
   myRoot: {fileID: 1635676056}
   isFinalNode: 0
   isClaimed: 0
-  isBeginningNode: 0
+  isBeginningNode: 1
   curDistanceToClaim: 10
   maxDistanceToClaim: 50
   pushBack: 0
@@ -417,7 +417,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1924617864}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3, y: 0, z: -0.053803697}
+  m_LocalPosition: {x: -6, y: 0, z: -0.053803697}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -438,7 +438,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNode: {fileID: 0}
   currentNode: {fileID: 1924617867}
-  previousnode: {fileID: 0}
+  previousNode: {fileID: 1631622127}
   myRoot: {fileID: 1635676056}
   isFinalNode: 0
   isClaimed: 0
