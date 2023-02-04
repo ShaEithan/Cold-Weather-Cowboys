@@ -14,7 +14,7 @@ public class RootNode : MonoBehaviour
 
     // growth variables
     private int passiveGrowth = 0; // how much growth rate without pressing (defense)
-    private int activeGrowth = 1; // how much growth rate when clicking (attack)
+    private int activeGrowth = 2; // how much growth rate when clicking (attack)
 
 
     // getters
@@ -36,34 +36,41 @@ public class RootNode : MonoBehaviour
     // Used for rewards for claiming more nodes 
     public void changePassiveGrowth(int changeAmount)
     {
-        if (passiveGrowth + changeAmount < 0)
-        {
-            passiveGrowth = 0;
-            
-        }
-        else
-        {
-            passiveGrowth += changeAmount;
-        }
+        passiveGrowth += changeAmount;
     }
 
     public void changeActiveGrowth(int changeAmount)
     {
+        activeGrowth += changeAmount;
+    }
+
+    public void subtractActiveGrowth(int changeAmount)
+    {
         if (activeGrowth + changeAmount < 1)
         {
             activeGrowth = 1;
+            return;
         }
-        else
+
+        activeGrowth -= changeAmount;
+    }  
+
+    public void subtractPassiveGrowth(int changeAmount)
+    {
+        if (passiveGrowth + changeAmount < 0)
         {
-            activeGrowth += changeAmount;
+            passiveGrowth = 0;
+            return;
         }
+
+        passiveGrowth -= changeAmount;
     }
 
-    
     public void changeNumClaimed(int amount)
     {
         numNodesClaimed += amount;
     }
+
 
     // Win Condition for Game
 
