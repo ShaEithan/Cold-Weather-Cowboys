@@ -29,7 +29,7 @@ public class NodeStatUI : MonoBehaviour
         // updates distance text with current distance of node
         // only shows if node is available to claim
 
-        if (currentNode.previousNode.isNodeClaimed() && !currentNode.isNodeClaimed())
+        if (currentNode.previousNode != null && currentNode.previousNode.isNodeClaimed() && !currentNode.isNodeClaimed())
         {
             distanceNeededText.gameObject.SetActive(true);
             distanceNeededText.text = currentNode.distance.ToString() + " / " + currentNode.maxDistance; ;
