@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 // script for Node Game Object
 
@@ -14,7 +16,9 @@ public class NodeController : MonoBehaviour
     // and so we can edit the root node's properties and
     // show certain status of nodes and more
 
-    public NodeController nextNode;
+    public NodeController nextNode1;
+    public NodeController nextNode2;
+
     public NodeController currentNode;
     public NodeController previousNode;
     public RootNode myRoot;
@@ -32,11 +36,11 @@ public class NodeController : MonoBehaviour
 
     // push and pull attributes
 
-    public int curDistanceToClaim; // distance needed to claim the next node, if 0 we can claim
-    public int maxDistanceToClaim; // if we want to claim this node, this is the max
+    public int distance; // distance needed to claim the next node, if 0 we can claim
+    public int maxDistance; // if we want to claim this node, this is the max
     // distance we have to traverse to get this node.
 
-    public int resetCurDistanceToClaim; // variable to reset once the current nodes is declaimed 
+    public int resetDistance; // variable to reset once the current nodes is declaimed 
     
     public int pushBack; // updates on time interval to add distance to, interacts with
     // curDistanceToClaim
@@ -70,15 +74,20 @@ public class NodeController : MonoBehaviour
             return;
         }
 
-        if (curDistanceToClaim <= 0 && !isClaimed)
+        if (distance >= maxDistance && !isClaimed)
         { 
             isClaimed = true; // change flag
 
             currentNode.GetComponent<Renderer>().material.color = new(0, 255, 0); // claimed node turns green
 
-            if (nextNode != null)
+            if (nextNode1 != null)
             {
-                nextNode.GetComponent<Renderer>().material.color = new(255, 255, 0); // if we have a nextNode turn it yellow
+                nextNode1.GetComponent<Renderer>().material.color = new(255, 255, 0); // if we have a nextNode turn it yellow
+            }
+
+            if (nextNode2 != null)
+            {
+                nextNode2.GetComponent<Renderer>().material.color = new(255, 255, 0); // if we have a nextNode turn it yellow
             }
 
             myRoot.changeNumClaimed(1); // add 1 to number of nodes claimed
@@ -92,7 +101,7 @@ public class NodeController : MonoBehaviour
 
         if (!isClaimed)
         {
-            curDistanceToClaim -= myRoot.getActiveGrowth();
+            distance += myRoot.getActiveGrowth();
         }
     }
 
@@ -128,24 +137,23 @@ public class NodeController : MonoBehaviour
 
         // lose condition goes here... if we lose initial beginner nodes, the planet can attack the main root and we die
         
-        /*
-           if (isBeginnerNode && !isNodeClaimed()) 
-           {
-                go to lose scene ? 
-           }
-        */ 
-        
-        if (isFinalNode && isNodeClaimed()) // meaning we're done with this path
+       
+        if (isBeginningNode && !isNodeClaimed()) 
         {
-            return;
+          SceneManager.LoadScene("GameOver");
         }
-
 
         if (!previousNode.isNodeClaimed())
         {
             isClaimed = false;
             return;
         }
+
+        if (isFinalNode && isNodeClaimed()) // meaning we're done with this path
+        {
+            return;
+        }
+
 
         // if the planet has pushed back all the way, we unclaim the previous node and have to reclaim the previous one to start getting this one
         // again
@@ -160,20 +168,24 @@ public class NodeController : MonoBehaviour
             // there will be pushback and passive growth
             if (!isNodeClaimed() && (previousNode.isNodeClaimed()))
             {
-                curDistanceToClaim -= myRoot.getPassiveGrowth();
-                curDistanceToClaim += pushBack;
+                distance += myRoot.getPassiveGrowth();
+                distance -= pushBack;
             }
 
-            if (curDistanceToClaim >= maxDistanceToClaim)
+            //  unclaim condition
+            if (distance <= 0)
             {
                 previousNode.isClaimed = false;
 
                 myRoot.numNodesClaimed--; // subtract a node claimed
 
-                previousNode.curDistanceToClaim = previousNode.resetCurDistanceToClaim;
-                currentNode.curDistanceToClaim = currentNode.resetCurDistanceToClaim;
+                
+                previousNode.distance = previousNode.resetDistance;
+                currentNode.distance = currentNode.resetDistance;
 
-                if (currentNode.isFinalNode)
+
+
+                /*if (currentNode.isFinalNode)
                 {
                     // change back to final Node color bc this should be inaccessble
                     currentNode.GetComponent<Renderer>().material.color = new(255, 0, 0);
@@ -181,10 +193,20 @@ public class NodeController : MonoBehaviour
                 else
                 {
                     currentNode.GetComponent<Renderer>().material.color = new(0, 0, 0); // should be inaccessible node color 
+                }*/
+
+                currentNode.GetComponent<Renderer>().material.color = new(0, 0, 0); // should be inaccessible node color 
+            
+                if (!previousNode.isClaimed && isBeginningNode)
+                {
+                    previousNode.GetComponent<Renderer>().material.color = new(255, 255, 255); // beginner node should now be dead
+                }
+                else
+                {
+                    previousNode.GetComponent<Renderer>().material.color = new(255, 255, 0); // previous node should now be clickable
                 }
                 
-                previousNode.GetComponent<Renderer>().material.color = new(255, 255, 0); // previous node should now be clickable
-
+                // removes benefits
                 if (addedActive > 0)
                 {
                     myRoot.subtractActiveGrowth(previousNode.addedActive);

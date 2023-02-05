@@ -154,18 +154,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 901082a6ac0f34969a39fbe181965d6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextNode: {fileID: 1424623704}
+  nextNode1: {fileID: 524840853}
+  nextNode2: {fileID: 0}
   currentNode: {fileID: 334184740}
   previousNode: {fileID: 1341440355}
   myRoot: {fileID: 1635676056}
   isFinalNode: 0
   isClaimed: 0
   isBeginningNode: 0
-  isClickable: 0
-  curDistanceToClaim: 30
-  maxDistanceToClaim: 60
-  resetCurDistanceToClaim: 30
-  pushBack: 2
+  distance: 20
+  maxDistance: 40
+  resetDistance: 0
+  pushBack: 1
   addedPassive: 0
   addedActive: 2
   delayAmount: 1
@@ -324,19 +324,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 901082a6ac0f34969a39fbe181965d6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextNode: {fileID: 667579890}
+  nextNode1: {fileID: 0}
+  nextNode2: {fileID: 0}
   currentNode: {fileID: 524840853}
   previousNode: {fileID: 1424623704}
   myRoot: {fileID: 1635676056}
-  isFinalNode: 0
+  isFinalNode: 1
   isClaimed: 0
   isBeginningNode: 0
-  isClickable: 0
-  curDistanceToClaim: 70
-  maxDistanceToClaim: 125
-  resetCurDistanceToClaim: 20
-  pushBack: 5
-  addedPassive: 5
+  distance: 20
+  maxDistance: 60
+  resetDistance: 0
+  pushBack: 1
+  addedPassive: 1
   addedActive: 0
   delayAmount: 1
 --- !u!61 &524840854
@@ -450,7 +450,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &667579890
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -463,17 +463,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 901082a6ac0f34969a39fbe181965d6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextNode: {fileID: 994963541}
+  nextNode1: {fileID: 0}
+  nextNode2: {fileID: 0}
   currentNode: {fileID: 667579890}
   previousNode: {fileID: 524840853}
   myRoot: {fileID: 1635676056}
   isFinalNode: 0
   isClaimed: 0
   isBeginningNode: 0
-  isClickable: 0
-  curDistanceToClaim: 70
-  maxDistanceToClaim: 125
-  resetCurDistanceToClaim: 20
+  distance: 0
+  maxDistance: 0
+  resetDistance: 0
   pushBack: 5
   addedPassive: 5
   addedActive: 0
@@ -631,7 +631,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &712388224
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -644,17 +644,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 901082a6ac0f34969a39fbe181965d6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextNode: {fileID: 2136240870}
+  nextNode1: {fileID: 0}
+  nextNode2: {fileID: 0}
   currentNode: {fileID: 712388224}
   previousNode: {fileID: 2096318719}
   myRoot: {fileID: 1635676056}
   isFinalNode: 0
   isClaimed: 0
   isBeginningNode: 0
-  isClickable: 0
-  curDistanceToClaim: 35
-  maxDistanceToClaim: 70
-  resetCurDistanceToClaim: 30
+  distance: 0
+  maxDistance: 0
+  resetDistance: 0
   pushBack: 2
   addedPassive: 0
   addedActive: 2
@@ -770,7 +770,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &842535512
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -783,17 +783,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 901082a6ac0f34969a39fbe181965d6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextNode: {fileID: 1716879000}
+  nextNode1: {fileID: 0}
+  nextNode2: {fileID: 0}
   currentNode: {fileID: 842535512}
   previousNode: {fileID: 2136240870}
   myRoot: {fileID: 1635676056}
   isFinalNode: 0
   isClaimed: 0
   isBeginningNode: 0
-  isClickable: 0
-  curDistanceToClaim: 120
-  maxDistanceToClaim: 200
-  resetCurDistanceToClaim: 30
+  distance: 0
+  maxDistance: 0
+  resetDistance: 0
   pushBack: 5
   addedPassive: 1
   addedActive: 5
@@ -909,7 +909,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &994963539
 Transform:
   m_ObjectHideFlags: 0
@@ -963,17 +963,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 901082a6ac0f34969a39fbe181965d6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextNode: {fileID: 0}
+  nextNode1: {fileID: 0}
+  nextNode2: {fileID: 0}
   currentNode: {fileID: 994963541}
   previousNode: {fileID: 667579890}
   myRoot: {fileID: 1635676056}
   isFinalNode: 1
   isClaimed: 0
   isBeginningNode: 0
-  isClickable: 0
-  curDistanceToClaim: 70
-  maxDistanceToClaim: 125
-  resetCurDistanceToClaim: 20
+  distance: 0
+  maxDistance: 0
+  resetDistance: 0
   pushBack: 5
   addedPassive: 5
   addedActive: 0
@@ -1061,17 +1061,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 901082a6ac0f34969a39fbe181965d6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextNode: {fileID: 334184740}
+  nextNode1: {fileID: 334184740}
+  nextNode2: {fileID: 1424623704}
   currentNode: {fileID: 1341440355}
   previousNode: {fileID: 0}
   myRoot: {fileID: 1635676056}
   isFinalNode: 0
   isClaimed: 1
   isBeginningNode: 1
-  isClickable: 0
-  curDistanceToClaim: 0
-  maxDistanceToClaim: 0
-  resetCurDistanceToClaim: 0
+  distance: 0
+  maxDistance: 0
+  resetDistance: 0
   pushBack: 0
   addedPassive: 0
   addedActive: 0
@@ -1215,20 +1215,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 901082a6ac0f34969a39fbe181965d6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextNode: {fileID: 524840853}
+  nextNode1: {fileID: 0}
+  nextNode2: {fileID: 0}
   currentNode: {fileID: 1424623704}
-  previousNode: {fileID: 334184740}
+  previousNode: {fileID: 1341440355}
   myRoot: {fileID: 1635676056}
-  isFinalNode: 1
+  isFinalNode: 0
   isClaimed: 0
   isBeginningNode: 0
-  isClickable: 0
-  curDistanceToClaim: 70
-  maxDistanceToClaim: 125
-  resetCurDistanceToClaim: 20
-  pushBack: 5
-  addedPassive: 5
-  addedActive: 0
+  distance: 20
+  maxDistance: 40
+  resetDistance: 0
+  pushBack: 1
+  addedPassive: 0
+  addedActive: 2
   delayAmount: 1
 --- !u!212 &1424623705
 SpriteRenderer:
@@ -1424,7 +1424,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1716878999
 Transform:
   m_ObjectHideFlags: 0
@@ -1452,17 +1452,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 901082a6ac0f34969a39fbe181965d6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextNode: {fileID: 0}
+  nextNode1: {fileID: 0}
+  nextNode2: {fileID: 0}
   currentNode: {fileID: 1716879000}
   previousNode: {fileID: 842535512}
   myRoot: {fileID: 1635676056}
   isFinalNode: 1
   isClaimed: 0
   isBeginningNode: 0
-  isClickable: 0
-  curDistanceToClaim: 1000
-  maxDistanceToClaim: 1200
-  resetCurDistanceToClaim: 30
+  distance: 0
+  maxDistance: 0
+  resetDistance: 0
   pushBack: 10
   addedPassive: 5
   addedActive: 5
@@ -1563,7 +1563,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2096318719
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1576,17 +1576,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 901082a6ac0f34969a39fbe181965d6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextNode: {fileID: 712388224}
+  nextNode1: {fileID: 0}
+  nextNode2: {fileID: 0}
   currentNode: {fileID: 2096318719}
   previousNode: {fileID: 0}
   myRoot: {fileID: 1635676056}
   isFinalNode: 0
   isClaimed: 1
   isBeginningNode: 1
-  isClickable: 0
-  curDistanceToClaim: 0
-  maxDistanceToClaim: 0
-  resetCurDistanceToClaim: 0
+  distance: 0
+  maxDistance: 0
+  resetDistance: 0
   pushBack: 0
   addedPassive: 0
   addedActive: 0
@@ -1786,7 +1786,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2136240870
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1799,17 +1799,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 901082a6ac0f34969a39fbe181965d6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextNode: {fileID: 842535512}
+  nextNode1: {fileID: 0}
+  nextNode2: {fileID: 0}
   currentNode: {fileID: 2136240870}
   previousNode: {fileID: 712388224}
   myRoot: {fileID: 1635676056}
   isFinalNode: 0
   isClaimed: 0
   isBeginningNode: 0
-  isClickable: 0
-  curDistanceToClaim: 60
-  maxDistanceToClaim: 150
-  resetCurDistanceToClaim: 30
+  distance: 0
+  maxDistance: 0
+  resetDistance: 0
   pushBack: 5
   addedPassive: 1
   addedActive: 1
