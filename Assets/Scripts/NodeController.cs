@@ -18,6 +18,7 @@ public class NodeController : MonoBehaviour
 
     public NodeController nextNode1;
     public NodeController nextNode2;
+    public NodeController nextNode3;
 
     public NodeController currentNode;
     public NodeController previousNode;
@@ -88,6 +89,11 @@ public class NodeController : MonoBehaviour
             if (nextNode2 != null)
             {
                 nextNode2.GetComponent<Renderer>().material.color = new(255, 255, 0); // if we have a nextNode turn it yellow
+            }
+
+            if (nextNode3 != null)
+            {
+                nextNode3.GetComponent<Renderer>().material.color = new(255, 255, 0); // if we have a nextNode turn it yellow
             }
 
             myRoot.changeNumClaimed(1); // add 1 to number of nodes claimed
