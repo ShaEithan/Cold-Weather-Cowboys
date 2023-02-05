@@ -883,6 +883,7 @@ MonoBehaviour:
   currentNode: {fileID: 96748886}
   previousNode: {fileID: 546010364}
   myRoot: {fileID: 1635676056}
+  spriteChanger: {fileID: 2137121000}
   isFinalNode: 0
   isClaimed: 0
   isBeginningNode: 0
@@ -1056,6 +1057,7 @@ MonoBehaviour:
   currentNode: {fileID: 103667724}
   previousNode: {fileID: 257160560}
   myRoot: {fileID: 1635676056}
+  spriteChanger: {fileID: 2137121000}
   isFinalNode: 0
   isClaimed: 0
   isBeginningNode: 0
@@ -1229,6 +1231,7 @@ MonoBehaviour:
   currentNode: {fileID: 113841855}
   previousNode: {fileID: 1756526027}
   myRoot: {fileID: 1635676056}
+  spriteChanger: {fileID: 2137121000}
   isFinalNode: 0
   isClaimed: 0
   isBeginningNode: 0
@@ -1537,6 +1540,7 @@ MonoBehaviour:
   currentNode: {fileID: 165679855}
   previousNode: {fileID: 2000226430}
   myRoot: {fileID: 1635676056}
+  spriteChanger: {fileID: 2137121000}
   isFinalNode: 0
   isClaimed: 0
   isBeginningNode: 0
@@ -2242,6 +2246,7 @@ MonoBehaviour:
   currentNode: {fileID: 257160560}
   previousNode: {fileID: 1636199545}
   myRoot: {fileID: 1635676056}
+  spriteChanger: {fileID: 2137121000}
   isFinalNode: 0
   isClaimed: 0
   isBeginningNode: 0
@@ -2550,6 +2555,7 @@ MonoBehaviour:
   currentNode: {fileID: 266969235}
   previousNode: {fileID: 257160560}
   myRoot: {fileID: 1635676056}
+  spriteChanger: {fileID: 2137121000}
   isFinalNode: 0
   isClaimed: 0
   isBeginningNode: 0
@@ -2993,6 +2999,7 @@ MonoBehaviour:
   currentNode: {fileID: 316812704}
   previousNode: {fileID: 1464488278}
   myRoot: {fileID: 1635676056}
+  spriteChanger: {fileID: 2137121000}
   isFinalNode: 0
   isClaimed: 0
   isBeginningNode: 0
@@ -4261,6 +4268,7 @@ MonoBehaviour:
   currentNode: {fileID: 470330678}
   previousNode: {fileID: 103667724}
   myRoot: {fileID: 1635676056}
+  spriteChanger: {fileID: 2137121000}
   isFinalNode: 1
   isClaimed: 0
   isBeginningNode: 0
@@ -4565,6 +4573,7 @@ MonoBehaviour:
   currentNode: {fileID: 499261849}
   previousNode: {fileID: 1743574246}
   myRoot: {fileID: 1635676056}
+  spriteChanger: {fileID: 2137121000}
   isFinalNode: 1
   isClaimed: 0
   isBeginningNode: 0
@@ -4738,6 +4747,7 @@ MonoBehaviour:
   currentNode: {fileID: 525256119}
   previousNode: {fileID: 546010364}
   myRoot: {fileID: 1635676056}
+  spriteChanger: {fileID: 2137121000}
   isFinalNode: 0
   isClaimed: 0
   isBeginningNode: 0
@@ -4911,6 +4921,7 @@ MonoBehaviour:
   currentNode: {fileID: 538085677}
   previousNode: {fileID: 525256119}
   myRoot: {fileID: 1635676056}
+  spriteChanger: {fileID: 2137121000}
   isFinalNode: 0
   isClaimed: 0
   isBeginningNode: 0
@@ -5084,6 +5095,7 @@ MonoBehaviour:
   currentNode: {fileID: 546010364}
   previousNode: {fileID: 1341440355}
   myRoot: {fileID: 1635676056}
+  spriteChanger: {fileID: 2137121000}
   isFinalNode: 0
   isClaimed: 0
   isBeginningNode: 0
@@ -5257,6 +5269,7 @@ MonoBehaviour:
   currentNode: {fileID: 566119777}
   previousNode: {fileID: 1341440355}
   myRoot: {fileID: 1635676056}
+  spriteChanger: {fileID: 2137121000}
   isFinalNode: 0
   isClaimed: 0
   isBeginningNode: 0
@@ -6434,6 +6447,7 @@ MonoBehaviour:
   currentNode: {fileID: 761504791}
   previousNode: {fileID: 266969235}
   myRoot: {fileID: 1635676056}
+  spriteChanger: {fileID: 2137121000}
   isFinalNode: 1
   isClaimed: 0
   isBeginningNode: 0
@@ -6742,6 +6756,7 @@ MonoBehaviour:
   currentNode: {fileID: 782843069}
   previousNode: {fileID: 257160560}
   myRoot: {fileID: 1635676056}
+  spriteChanger: {fileID: 2137121000}
   isFinalNode: 0
   isClaimed: 0
   isBeginningNode: 0
@@ -7046,6 +7061,7 @@ MonoBehaviour:
   currentNode: {fileID: 845419340}
   previousNode: {fileID: 1853502263}
   myRoot: {fileID: 1635676056}
+  spriteChanger: {fileID: 2137121000}
   isFinalNode: 0
   isClaimed: 0
   isBeginningNode: 0
@@ -7350,6 +7366,7 @@ MonoBehaviour:
   currentNode: {fileID: 855515761}
   previousNode: {fileID: 113841855}
   myRoot: {fileID: 1635676056}
+  spriteChanger: {fileID: 2137121000}
   isFinalNode: 1
   isClaimed: 0
   isBeginningNode: 0
@@ -8270,6 +8287,7 @@ MonoBehaviour:
   currentNode: {fileID: 971673129}
   previousNode: {fileID: 1341440355}
   myRoot: {fileID: 1635676056}
+  spriteChanger: {fileID: 2137121000}
   isFinalNode: 1
   isClaimed: 0
   isBeginningNode: 0
@@ -9245,6 +9263,7 @@ MonoBehaviour:
   currentNode: {fileID: 1143166414}
   previousNode: {fileID: 1952185780}
   myRoot: {fileID: 1635676056}
+  spriteChanger: {fileID: 2137121000}
   isFinalNode: 0
   isClaimed: 0
   isBeginningNode: 0
@@ -9418,6 +9437,7 @@ MonoBehaviour:
   currentNode: {fileID: 1160779354}
   previousNode: {fileID: 845419340}
   myRoot: {fileID: 1635676056}
+  spriteChanger: {fileID: 2137121000}
   isFinalNode: 0
   isClaimed: 0
   isBeginningNode: 0
@@ -9984,6 +10004,7 @@ MonoBehaviour:
   currentNode: {fileID: 1204986278}
   previousNode: {fileID: 1566476953}
   myRoot: {fileID: 1635676056}
+  spriteChanger: {fileID: 2137121000}
   isFinalNode: 0
   isClaimed: 0
   isBeginningNode: 0
@@ -10757,6 +10778,7 @@ MonoBehaviour:
   currentNode: {fileID: 1329302626}
   previousNode: {fileID: 782843069}
   myRoot: {fileID: 1635676056}
+  spriteChanger: {fileID: 2137121000}
   isFinalNode: 1
   isClaimed: 0
   isBeginningNode: 0
@@ -10871,6 +10893,7 @@ MonoBehaviour:
   currentNode: {fileID: 1341440355}
   previousNode: {fileID: 0}
   myRoot: {fileID: 1635676056}
+  spriteChanger: {fileID: 2137121000}
   isFinalNode: 0
   isClaimed: 1
   isBeginningNode: 1
@@ -11087,6 +11110,7 @@ MonoBehaviour:
   currentNode: {fileID: 1374471997}
   previousNode: {fileID: 266969235}
   myRoot: {fileID: 1635676056}
+  spriteChanger: {fileID: 2137121000}
   isFinalNode: 1
   isClaimed: 0
   isBeginningNode: 0
@@ -11260,6 +11284,7 @@ MonoBehaviour:
   currentNode: {fileID: 1431201694}
   previousNode: {fileID: 316812704}
   myRoot: {fileID: 1635676056}
+  spriteChanger: {fileID: 2137121000}
   isFinalNode: 1
   isClaimed: 0
   isBeginningNode: 0
@@ -11568,6 +11593,7 @@ MonoBehaviour:
   currentNode: {fileID: 1464488278}
   previousNode: {fileID: 1341440355}
   myRoot: {fileID: 1635676056}
+  spriteChanger: {fileID: 2137121000}
   isFinalNode: 0
   isClaimed: 0
   isBeginningNode: 0
@@ -12138,6 +12164,7 @@ MonoBehaviour:
   currentNode: {fileID: 1537277015}
   previousNode: {fileID: 1891450094}
   myRoot: {fileID: 1635676056}
+  spriteChanger: {fileID: 2137121000}
   isFinalNode: 0
   isClaimed: 0
   isBeginningNode: 0
@@ -12577,6 +12604,7 @@ MonoBehaviour:
   currentNode: {fileID: 1566476953}
   previousNode: {fileID: 1671813074}
   myRoot: {fileID: 1635676056}
+  spriteChanger: {fileID: 2137121000}
   isFinalNode: 0
   isClaimed: 0
   isBeginningNode: 0
@@ -12881,6 +12909,7 @@ MonoBehaviour:
   currentNode: {fileID: 1588040629}
   previousNode: {fileID: 1996793322}
   myRoot: {fileID: 1635676056}
+  spriteChanger: {fileID: 2137121000}
   isFinalNode: 1
   isClaimed: 0
   isBeginningNode: 0
@@ -13418,6 +13447,7 @@ MonoBehaviour:
   currentNode: {fileID: 1636199545}
   previousNode: {fileID: 1204986278}
   myRoot: {fileID: 1635676056}
+  spriteChanger: {fileID: 2137121000}
   isFinalNode: 0
   isClaimed: 0
   isBeginningNode: 0
@@ -13857,6 +13887,7 @@ MonoBehaviour:
   currentNode: {fileID: 1671813074}
   previousNode: {fileID: 566119777}
   myRoot: {fileID: 1635676056}
+  spriteChanger: {fileID: 2137121000}
   isFinalNode: 0
   isClaimed: 0
   isBeginningNode: 0
@@ -14562,6 +14593,7 @@ MonoBehaviour:
   currentNode: {fileID: 1743574246}
   previousNode: {fileID: 1143166414}
   myRoot: {fileID: 1635676056}
+  spriteChanger: {fileID: 2137121000}
   isFinalNode: 0
   isClaimed: 0
   isBeginningNode: 0
@@ -14735,6 +14767,7 @@ MonoBehaviour:
   currentNode: {fileID: 1756526027}
   previousNode: {fileID: 96748886}
   myRoot: {fileID: 1635676056}
+  spriteChanger: {fileID: 2137121000}
   isFinalNode: 0
   isClaimed: 0
   isBeginningNode: 0
@@ -14908,6 +14941,7 @@ MonoBehaviour:
   currentNode: {fileID: 1809026570}
   previousNode: {fileID: 1537277015}
   myRoot: {fileID: 1635676056}
+  spriteChanger: {fileID: 2137121000}
   isFinalNode: 0
   isClaimed: 0
   isBeginningNode: 0
@@ -15216,6 +15250,7 @@ MonoBehaviour:
   currentNode: {fileID: 1853502263}
   previousNode: {fileID: 538085677}
   myRoot: {fileID: 1635676056}
+  spriteChanger: {fileID: 2137121000}
   isFinalNode: 0
   isClaimed: 0
   isBeginningNode: 0
@@ -15790,6 +15825,7 @@ MonoBehaviour:
   currentNode: {fileID: 1891450094}
   previousNode: {fileID: 1160779354}
   myRoot: {fileID: 1635676056}
+  spriteChanger: {fileID: 2137121000}
   isFinalNode: 0
   isClaimed: 0
   isBeginningNode: 0
@@ -16360,6 +16396,7 @@ MonoBehaviour:
   currentNode: {fileID: 1952185780}
   previousNode: {fileID: 1671813074}
   myRoot: {fileID: 1635676056}
+  spriteChanger: {fileID: 2137121000}
   isFinalNode: 0
   isClaimed: 0
   isBeginningNode: 0
@@ -16926,6 +16963,7 @@ MonoBehaviour:
   currentNode: {fileID: 1996793322}
   previousNode: {fileID: 165679855}
   myRoot: {fileID: 1635676056}
+  spriteChanger: {fileID: 2137121000}
   isFinalNode: 0
   isClaimed: 0
   isBeginningNode: 0
@@ -17234,6 +17272,7 @@ MonoBehaviour:
   currentNode: {fileID: 2000226430}
   previousNode: {fileID: 1671813074}
   myRoot: {fileID: 1635676056}
+  spriteChanger: {fileID: 2137121000}
   isFinalNode: 0
   isClaimed: 0
   isBeginningNode: 0
@@ -17407,6 +17446,7 @@ MonoBehaviour:
   currentNode: {fileID: 2014950443}
   previousNode: {fileID: 1341440355}
   myRoot: {fileID: 1635676056}
+  spriteChanger: {fileID: 2137121000}
   isFinalNode: 1
   isClaimed: 0
   isBeginningNode: 0
@@ -18009,6 +18049,9 @@ MonoBehaviour:
   claimedButton: {fileID: 21300000, guid: 14d47363f1a27e04ca185849939f4a8b, type: 3}
   claimableButton: {fileID: 21300000, guid: e21b75f816dfbcd48b6463ca482a16f1, type: 3}
   BossButton: {fileID: 21300000, guid: f9210c88ca487184d95517ab6d5cf187, type: 3}
+  BossButtonClickable: {fileID: 21300000, guid: bfd49f50fbd8f0e4291aa085b5413099, type: 3}
+  UnclaimableButton: {fileID: 21300000, guid: 3e9b1cde4bca313428b360b90aad36c0, type: 3}
+  BeginningNode: {fileID: 21300000, guid: 2b19980f0f16a8a4ca40cbd0107ec756, type: 3}
 --- !u!212 &2137121001
 SpriteRenderer:
   m_ObjectHideFlags: 0

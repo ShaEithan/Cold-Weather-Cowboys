@@ -143,12 +143,8 @@ public class NodeController : MonoBehaviour
             // final node
             else
             {
-<<<<<<< Updated upstream
-                currentNode.GetComponent<Renderer>().material.color = new(255, 0, 255);
-=======
                 // Play SFX Danger
                 currentNode.GetComponent<SpriteRenderer>().sprite = spriteChanger.BossButtonClickable;
->>>>>>> Stashed changes
             }
         }
 
@@ -220,7 +216,7 @@ public class NodeController : MonoBehaviour
 
             // if this node isn't claimed, and the previous one is
             // there will be pushback and passive growth
-            if (!isNodeClaimed() && (previousNode.isNodeClaimed()))
+            if (!isNodeClaimed() && previousNode != null && (previousNode.isNodeClaimed()))
             {
                 distance += myRoot.getPassiveGrowth();
                 distance -= pushBack;
