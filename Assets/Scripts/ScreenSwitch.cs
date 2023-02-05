@@ -23,7 +23,7 @@ public class ScreenSwitch : MonoBehaviour
     {
         SceneManager.LoadScene("Game"); //change to actual game
     }
-
+    
    
 
 }
