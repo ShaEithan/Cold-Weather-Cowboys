@@ -148,7 +148,7 @@ public class NodeController : MonoBehaviour
         }
 
         // clickable: if previous node claimed and not isclaimed
-        else if (!isBeginningNode && !isNodeClaimed() && previousNode.isNodeClaimed()) 
+        else
         {
             // normal node
             if (!isFinalNode)
@@ -162,6 +162,7 @@ public class NodeController : MonoBehaviour
                 currentNode.GetComponent<SpriteRenderer>().sprite = spriteChanger.BossButtonClickable;
             }
         }
+           
     }
 
     // Start is called before the first frame update
@@ -232,6 +233,8 @@ public class NodeController : MonoBehaviour
                 }
 
                 previousNode.isClaimed = false;
+
+               
 
                 colorChange();
 
