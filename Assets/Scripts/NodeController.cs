@@ -118,7 +118,7 @@ public class NodeController : MonoBehaviour
     void colorChange()
     {
         // unreachable: if previous node not claimed
-        if (!isBeginningNode && !previousNode.isNodeClaimed()) 
+        if (!isBeginningNode && !previousNode.isNodeClaimed() && !isClaimed) 
         {
             // normal node
             if (!isFinalNode)
@@ -131,7 +131,22 @@ public class NodeController : MonoBehaviour
                 currentNode.GetComponent<SpriteRenderer>().sprite = spriteChanger.BossButton;
             }
         }
-        
+
+        // claimed
+        else if (isNodeClaimed()) // claimed nodes, but not beginning node (green)
+        {
+            // normal node
+            if (!isBeginningNode)
+            {
+                currentNode.GetComponent<SpriteRenderer>().sprite = spriteChanger.claimedButton;
+            }
+            // beginner node
+            else
+            {
+                currentNode.GetComponent<SpriteRenderer>().sprite = spriteChanger.BeginningNode;
+            }
+        }
+
         // clickable: if previous node claimed and not isclaimed
         else if (!isBeginningNode && !isNodeClaimed() && previousNode.isNodeClaimed()) 
         {
@@ -145,21 +160,6 @@ public class NodeController : MonoBehaviour
             {
                 // Play SFX Danger
                 currentNode.GetComponent<SpriteRenderer>().sprite = spriteChanger.BossButtonClickable;
-            }
-        }
-
-        // claimed
-        else if (isNodeClaimed()) // claimed nodes, but not beginning node (green)
-        {
-            // normal node
-            if (!isBeginningNode)
-            {
-                currentNode.GetComponent<SpriteRenderer>().sprite = spriteChanger.claimedButton;
-            }
-            // beginner node
-            else 
-            {
-                currentNode.GetComponent<SpriteRenderer>().sprite = spriteChanger.BeginningNode;
             }
         }
     }
