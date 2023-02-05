@@ -67,11 +67,12 @@ public class NodeController : MonoBehaviour
         if (curDistanceToClaim <= 0 && !isClaimed)
         { 
             isClaimed = true; // change flag
-            currentNode.GetComponent<Renderer>().material.color = new(0, 255, 0);
+
+            currentNode.GetComponent<Renderer>().material.color = new(0, 255, 0); // claimed node turns green
 
             if (nextNode != null)
             {
-                nextNode.GetComponent<Renderer>().material.color = new(0, 0, 255);
+                currentNode.GetComponent<Renderer>().material.color = new(255, 255, 0); // if we have a nextNode turn it yellow
             }
 
             myRoot.changeNumClaimed(1); // add 1 to number of nodes claimed
