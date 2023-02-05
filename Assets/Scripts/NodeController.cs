@@ -29,7 +29,6 @@ public class NodeController : MonoBehaviour
     public bool isFinalNode; // is this the final node in the sequence/path
     public bool isClaimed; // have we claimed this?
     public bool isBeginningNode; // is this one of the original 3 nodes
-    public bool isClickable;
 
     // push and pull attributes
 
@@ -37,7 +36,7 @@ public class NodeController : MonoBehaviour
     public int maxDistanceToClaim; // if we want to claim this node, this is the max
     // distance we have to traverse to get this node.
 
-    public int resetCurDistanceToClaim; 
+    public int resetCurDistanceToClaim; // variable to reset once the current nodes is declaimed 
     
     public int pushBack; // updates on time interval to add distance to, interacts with
     // curDistanceToClaim
@@ -198,18 +197,5 @@ public class NodeController : MonoBehaviour
 
             }
         }
-
-        // if this is a beginning node and unclaimed -> lose the game! 
-        
-        // if the previous node isn't claimed, then make sure this one is unclaimed
-
-        // add passive growth as long as it isn't claimed
-
-        // subtract current growth distance with push back value make sure this is claimed
-
-        // check if curDistanceToClaim >= maxDistancetoClaim -> unclaim previous node
-        // and remove benefits
-
-        
     }
 }
