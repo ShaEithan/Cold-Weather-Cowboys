@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    // audio player
+    public AudioSource audioSource;
+    public AudioClip[] audioClipArray;
+
     private static GameManager managerInstance;
     
     void Awake()

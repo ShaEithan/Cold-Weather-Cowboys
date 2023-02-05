@@ -181,9 +181,9 @@ public class NodeController : MonoBehaviour
             distance = maxDistance / 2;
             resetDistance = maxDistance / 2;
 
-            pushBack = maxDistance / 10;
+            pushBack = maxDistance / 20;
             addedActive = maxDistance / 20;
-            addedPassive = maxDistance / 30;
+            addedPassive = maxDistance / 50;
             hasSetStats = true;
         }
 
