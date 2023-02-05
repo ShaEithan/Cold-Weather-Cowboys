@@ -11,7 +11,7 @@ public class LineScript : MonoBehaviour
     // needed if we need to access variables from our currentNode
     public NodeController currentNode;
 
-    public LineRenderer lineRenderer; // assign t$$anonymous$$s in the inspector
+    public LineRenderer lineRenderer; 
 
 
     private void drawLineBetweenNodes(Transform firstT, Transform secondT)
@@ -24,6 +24,7 @@ public class LineScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         // # of positions to count of line renderer
         lineRenderer.positionCount = 2;
 
