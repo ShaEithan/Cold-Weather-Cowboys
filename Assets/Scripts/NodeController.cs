@@ -105,45 +105,74 @@ public class NodeController : MonoBehaviour
         }
     }
 
+    void colorChange()
+    {
+        // unreachable: if previous node not claimed
+        if (!isBeginningNode && !previousNode.isNodeClaimed()) 
+        {
+            // normal node
+            if (!isFinalNode)
+            {
+                currentNode.GetComponent<Renderer>().material.color = new(0, 0, 0);
+            }
+            // final node  
+            else 
+            {
+                currentNode.GetComponent<Renderer>().material.color = new(255, 0, 0);
+            }
+        }
+        
+        // clickable: if previous node claimed and not isclaimed
+        else if (!isBeginningNode && !isNodeClaimed() && previousNode.isNodeClaimed()) 
+        {
+            // normal node
+            if (!isFinalNode)
+            {
+                currentNode.GetComponent<Renderer>().material.color = new(255, 255, 0);
+            }
+            // final node
+            else
+            {
+                currentNode.GetComponent<Renderer>().material.color = new(255, 0, 255);
+            }
+        }
+
+        // claimed
+        else if (isNodeClaimed()) // claimed nodes, but not beginning node (green)
+        {
+            // normal node
+            if (!isBeginningNode)
+            {
+                currentNode.GetComponent<Renderer>().material.color = new(0, 255, 0);
+            }
+            // beginner node
+            else 
+            {
+                currentNode.GetComponent<Renderer>().material.color = new(128, 0, 128);
+            }
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
         // color stuff (initial)
-        if (isBeginningNode) // beginner node color (cyan)
-        {
-            currentNode.GetComponent<Renderer>().material.color = new(0, 255, 255);
-        }
-        else if (isFinalNode) // final node color (red)
-        {
-            currentNode.GetComponent<Renderer>().material.color = new(255, 0, 0);
-        }
-        else if (isNodeClaimed() && (isBeginningNode || previousNode.isNodeClaimed())) // claimed nodes, but not beginning node (green)
-        {
-            currentNode.GetComponent<Renderer>().material.color = new(0, 255, 0);
-        }
-        else if (!isNodeClaimed() && previousNode.isNodeClaimed()) // clickable and not final boss node (yellow)
-        {
-            currentNode.GetComponent<Renderer>().material.color = new(255, 255, 0);
-        }
-        else // unreachable (black) 
-        {
-            currentNode.GetComponent<Renderer>().material.color = new(0, 0, 0);
-        }
+        colorChange();
     }
+
 
     // Update is called once per frame
     void Update()
     {
 
         // lose condition goes here... if we lose initial beginner nodes, the planet can attack the main root and we die
-        
-       
+
         if (isBeginningNode && !isNodeClaimed()) 
         {
           SceneManager.LoadScene("GameOver");
         }
 
-        if (!previousNode.isNodeClaimed())
+        if (!isBeginningNode && !previousNode.isNodeClaimed())
         {
             isClaimed = false;
             return;
@@ -175,37 +204,23 @@ public class NodeController : MonoBehaviour
             //  unclaim condition
             if (distance <= 0)
             {
+                if (isBeginningNode)
+                {
+                    colorChange();
+                    return;
+                }
+
                 previousNode.isClaimed = false;
+
+                colorChange();
 
                 myRoot.numNodesClaimed--; // subtract a node claimed
 
-                
                 previousNode.distance = previousNode.resetDistance;
                 currentNode.distance = currentNode.resetDistance;
 
-
-
-                /*if (currentNode.isFinalNode)
-                {
-                    // change back to final Node color bc this should be inaccessble
-                    currentNode.GetComponent<Renderer>().material.color = new(255, 0, 0);
-                }
-                else
-                {
-                    currentNode.GetComponent<Renderer>().material.color = new(0, 0, 0); // should be inaccessible node color 
-                }*/
-
-                currentNode.GetComponent<Renderer>().material.color = new(0, 0, 0); // should be inaccessible node color 
-            
-                if (!previousNode.isClaimed && isBeginningNode)
-                {
-                    previousNode.GetComponent<Renderer>().material.color = new(255, 255, 255); // beginner node should now be dead
-                }
-                else
-                {
-                    previousNode.GetComponent<Renderer>().material.color = new(255, 255, 0); // previous node should now be clickable
-                }
                 
+
                 // removes benefits
                 if (addedActive > 0)
                 {

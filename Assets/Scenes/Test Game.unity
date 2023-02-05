@@ -327,7 +327,7 @@ MonoBehaviour:
   nextNode1: {fileID: 0}
   nextNode2: {fileID: 0}
   currentNode: {fileID: 524840853}
-  previousNode: {fileID: 1424623704}
+  previousNode: {fileID: 334184740}
   myRoot: {fileID: 1635676056}
   isFinalNode: 1
   isClaimed: 0
