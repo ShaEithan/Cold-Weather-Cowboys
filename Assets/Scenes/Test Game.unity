@@ -617,7 +617,7 @@ MonoBehaviour:
   isBeginningNode: 0
   distance: 20
   maxDistance: 40
-  resetDistance: 0
+  resetDistance: 20
   pushBack: 1
   addedPassive: 0
   addedActive: 2
@@ -773,9 +773,9 @@ MonoBehaviour:
   isFinalNode: 0
   isClaimed: 0
   isBeginningNode: 0
-  distance: 20
-  maxDistance: 40
-  resetDistance: 0
+  distance: 175
+  maxDistance: 350
+  resetDistance: 175
   pushBack: 1
   addedPassive: 0
   addedActive: 2
@@ -931,9 +931,9 @@ MonoBehaviour:
   isFinalNode: 0
   isClaimed: 0
   isBeginningNode: 0
-  distance: 20
-  maxDistance: 40
-  resetDistance: 0
+  distance: 50
+  maxDistance: 100
+  resetDistance: 50
   pushBack: 1
   addedPassive: 0
   addedActive: 2
@@ -1089,10 +1089,10 @@ MonoBehaviour:
   isFinalNode: 0
   isClaimed: 0
   isBeginningNode: 0
-  distance: 20
-  maxDistance: 40
-  resetDistance: 0
-  pushBack: 1
+  distance: 75
+  maxDistance: 150
+  resetDistance: 75
+  pushBack: 4
   addedPassive: 0
   addedActive: 2
   delayAmount: 1
@@ -1509,9 +1509,9 @@ MonoBehaviour:
   isFinalNode: 0
   isClaimed: 0
   isBeginningNode: 0
-  distance: 20
-  maxDistance: 40
-  resetDistance: 0
+  distance: 200
+  maxDistance: 300
+  resetDistance: 200
   pushBack: 1
   addedPassive: 0
   addedActive: 2
@@ -1667,9 +1667,9 @@ MonoBehaviour:
   isFinalNode: 0
   isClaimed: 0
   isBeginningNode: 0
-  distance: 20
-  maxDistance: 40
-  resetDistance: 0
+  distance: 250
+  maxDistance: 500
+  resetDistance: 250
   pushBack: 1
   addedPassive: 0
   addedActive: 2
@@ -1825,10 +1825,10 @@ MonoBehaviour:
   isFinalNode: 0
   isClaimed: 0
   isBeginningNode: 0
-  distance: 20
-  maxDistance: 40
-  resetDistance: 0
-  pushBack: 1
+  distance: 30
+  maxDistance: 60
+  resetDistance: 30
+  pushBack: 4
   addedPassive: 0
   addedActive: 2
   delayAmount: 1
@@ -2538,9 +2538,9 @@ MonoBehaviour:
   isFinalNode: 1
   isClaimed: 0
   isBeginningNode: 0
-  distance: 20
-  maxDistance: 40
-  resetDistance: 0
+  distance: 250
+  maxDistance: 500
+  resetDistance: 250
   pushBack: 1
   addedPassive: 0
   addedActive: 2
@@ -2827,9 +2827,9 @@ MonoBehaviour:
   isFinalNode: 1
   isClaimed: 0
   isBeginningNode: 0
-  distance: 20
-  maxDistance: 40
-  resetDistance: 0
+  distance: 200
+  maxDistance: 400
+  resetDistance: 200
   pushBack: 1
   addedPassive: 0
   addedActive: 2
@@ -2985,9 +2985,9 @@ MonoBehaviour:
   isFinalNode: 0
   isClaimed: 0
   isBeginningNode: 0
-  distance: 20
-  maxDistance: 40
-  resetDistance: 0
+  distance: 25
+  maxDistance: 50
+  resetDistance: 25
   pushBack: 1
   addedPassive: 0
   addedActive: 2
@@ -3143,9 +3143,9 @@ MonoBehaviour:
   isFinalNode: 0
   isClaimed: 0
   isBeginningNode: 0
-  distance: 20
-  maxDistance: 40
-  resetDistance: 0
+  distance: 50
+  maxDistance: 100
+  resetDistance: 50
   pushBack: 1
   addedPassive: 0
   addedActive: 2
@@ -3303,8 +3303,8 @@ MonoBehaviour:
   isBeginningNode: 0
   distance: 20
   maxDistance: 40
-  resetDistance: 0
-  pushBack: 1
+  resetDistance: 20
+  pushBack: 0
   addedPassive: 0
   addedActive: 2
   delayAmount: 1
@@ -3461,8 +3461,8 @@ MonoBehaviour:
   isBeginningNode: 0
   distance: 20
   maxDistance: 40
-  resetDistance: 0
-  pushBack: 1
+  resetDistance: 20
+  pushBack: 0
   addedPassive: 0
   addedActive: 2
   delayAmount: 1
@@ -4081,9 +4081,9 @@ MonoBehaviour:
   isFinalNode: 1
   isClaimed: 0
   isBeginningNode: 0
-  distance: 20
-  maxDistance: 40
-  resetDistance: 0
+  distance: 300
+  maxDistance: 600
+  resetDistance: 300
   pushBack: 1
   addedPassive: 0
   addedActive: 2
@@ -4240,7 +4240,7 @@ MonoBehaviour:
   isClaimed: 0
   isBeginningNode: 0
   distance: 20
-  maxDistance: 40
+  maxDistance: 450
   resetDistance: 0
   pushBack: 1
   addedPassive: 0
@@ -4528,9 +4528,9 @@ MonoBehaviour:
   isFinalNode: 0
   isClaimed: 0
   isBeginningNode: 0
-  distance: 20
-  maxDistance: 40
-  resetDistance: 0
+  distance: 200
+  maxDistance: 400
+  resetDistance: 200
   pushBack: 1
   addedPassive: 0
   addedActive: 2
@@ -4817,9 +4817,9 @@ MonoBehaviour:
   isFinalNode: 1
   isClaimed: 0
   isBeginningNode: 0
-  distance: 20
-  maxDistance: 40
-  resetDistance: 0
+  distance: 100
+  maxDistance: 200
+  resetDistance: 100
   pushBack: 1
   addedPassive: 0
   addedActive: 2
@@ -5452,9 +5452,9 @@ MonoBehaviour:
   isFinalNode: 1
   isClaimed: 0
   isBeginningNode: 0
-  distance: 20
-  maxDistance: 40
-  resetDistance: 0
+  distance: 25
+  maxDistance: 50
+  resetDistance: 25
   pushBack: 1
   addedPassive: 0
   addedActive: 2
@@ -5872,9 +5872,9 @@ MonoBehaviour:
   isFinalNode: 0
   isClaimed: 0
   isBeginningNode: 0
-  distance: 20
-  maxDistance: 40
-  resetDistance: 0
+  distance: 50
+  maxDistance: 100
+  resetDistance: 50
   pushBack: 1
   addedPassive: 0
   addedActive: 2
@@ -6030,9 +6030,9 @@ MonoBehaviour:
   isFinalNode: 0
   isClaimed: 0
   isBeginningNode: 0
-  distance: 20
-  maxDistance: 40
-  resetDistance: 0
+  distance: 250
+  maxDistance: 500
+  resetDistance: 250
   pushBack: 1
   addedPassive: 0
   addedActive: 2
@@ -6581,9 +6581,9 @@ MonoBehaviour:
   isFinalNode: 0
   isClaimed: 0
   isBeginningNode: 0
-  distance: 20
-  maxDistance: 40
-  resetDistance: 0
+  distance: 70
+  maxDistance: 140
+  resetDistance: 70
   pushBack: 1
   addedPassive: 0
   addedActive: 2
@@ -7001,9 +7001,9 @@ MonoBehaviour:
   isFinalNode: 1
   isClaimed: 0
   isBeginningNode: 0
-  distance: 20
-  maxDistance: 40
-  resetDistance: 0
+  distance: 350
+  maxDistance: 700
+  resetDistance: 350
   pushBack: 1
   addedPassive: 0
   addedActive: 2
@@ -7316,9 +7316,9 @@ MonoBehaviour:
   isFinalNode: 1
   isClaimed: 0
   isBeginningNode: 0
-  distance: 20
-  maxDistance: 40
-  resetDistance: 0
+  distance: 200
+  maxDistance: 400
+  resetDistance: 200
   pushBack: 1
   addedPassive: 0
   addedActive: 2
@@ -7474,9 +7474,9 @@ MonoBehaviour:
   isFinalNode: 1
   isClaimed: 0
   isBeginningNode: 0
-  distance: 20
-  maxDistance: 40
-  resetDistance: 0
+  distance: 50
+  maxDistance: 100
+  resetDistance: 50
   pushBack: 1
   addedPassive: 0
   addedActive: 2
@@ -7634,8 +7634,8 @@ MonoBehaviour:
   isBeginningNode: 0
   distance: 20
   maxDistance: 40
-  resetDistance: 0
-  pushBack: 1
+  resetDistance: 20
+  pushBack: 0
   addedPassive: 0
   addedActive: 2
   delayAmount: 1
@@ -8052,9 +8052,9 @@ MonoBehaviour:
   isFinalNode: 0
   isClaimed: 0
   isBeginningNode: 0
-  distance: 20
-  maxDistance: 40
-  resetDistance: 0
+  distance: 350
+  maxDistance: 700
+  resetDistance: 350
   pushBack: 1
   addedPassive: 0
   addedActive: 2
@@ -8341,9 +8341,9 @@ MonoBehaviour:
   isFinalNode: 0
   isClaimed: 0
   isBeginningNode: 0
-  distance: 20
-  maxDistance: 40
-  resetDistance: 0
+  distance: 50
+  maxDistance: 100
+  resetDistance: 50
   pushBack: 1
   addedPassive: 0
   addedActive: 2
@@ -8630,10 +8630,10 @@ MonoBehaviour:
   isFinalNode: 1
   isClaimed: 0
   isBeginningNode: 0
-  distance: 20
-  maxDistance: 40
-  resetDistance: 0
-  pushBack: 1
+  distance: 150
+  maxDistance: 300
+  resetDistance: 150
+  pushBack: 12
   addedPassive: 0
   addedActive: 2
   delayAmount: 1
@@ -9017,9 +9017,9 @@ MonoBehaviour:
   isFinalNode: 0
   isClaimed: 0
   isBeginningNode: 0
-  distance: 20
-  maxDistance: 40
-  resetDistance: 0
+  distance: 100
+  maxDistance: 200
+  resetDistance: 100
   pushBack: 1
   addedPassive: 0
   addedActive: 2
@@ -9306,9 +9306,9 @@ MonoBehaviour:
   isFinalNode: 0
   isClaimed: 0
   isBeginningNode: 0
-  distance: 20
-  maxDistance: 40
-  resetDistance: 0
+  distance: 30
+  maxDistance: 60
+  resetDistance: 30
   pushBack: 1
   addedPassive: 0
   addedActive: 2
@@ -9726,9 +9726,9 @@ MonoBehaviour:
   isFinalNode: 0
   isClaimed: 0
   isBeginningNode: 0
-  distance: 20
-  maxDistance: 40
-  resetDistance: 0
+  distance: 100
+  maxDistance: 200
+  resetDistance: 100
   pushBack: 1
   addedPassive: 0
   addedActive: 2
@@ -9884,9 +9884,9 @@ MonoBehaviour:
   isFinalNode: 0
   isClaimed: 0
   isBeginningNode: 0
-  distance: 20
-  maxDistance: 40
-  resetDistance: 0
+  distance: 25
+  maxDistance: 50
+  resetDistance: 25
   pushBack: 1
   addedPassive: 0
   addedActive: 2
@@ -10042,9 +10042,9 @@ MonoBehaviour:
   isFinalNode: 0
   isClaimed: 0
   isBeginningNode: 0
-  distance: 20
-  maxDistance: 40
-  resetDistance: 0
+  distance: 400
+  maxDistance: 800
+  resetDistance: 400
   pushBack: 1
   addedPassive: 0
   addedActive: 2
@@ -10200,9 +10200,9 @@ MonoBehaviour:
   isFinalNode: 0
   isClaimed: 0
   isBeginningNode: 0
-  distance: 20
-  maxDistance: 40
-  resetDistance: 0
+  distance: 100
+  maxDistance: 200
+  resetDistance: 100
   pushBack: 1
   addedPassive: 0
   addedActive: 2
@@ -10489,9 +10489,9 @@ MonoBehaviour:
   isFinalNode: 0
   isClaimed: 0
   isBeginningNode: 0
-  distance: 20
-  maxDistance: 40
-  resetDistance: 0
+  distance: 300
+  maxDistance: 600
+  resetDistance: 300
   pushBack: 1
   addedPassive: 0
   addedActive: 2
@@ -10909,9 +10909,9 @@ MonoBehaviour:
   isFinalNode: 0
   isClaimed: 0
   isBeginningNode: 0
-  distance: 20
-  maxDistance: 40
-  resetDistance: 0
+  distance: 35
+  maxDistance: 70
+  resetDistance: 35
   pushBack: 1
   addedPassive: 0
   addedActive: 2
@@ -11460,10 +11460,10 @@ MonoBehaviour:
   isFinalNode: 0
   isClaimed: 0
   isBeginningNode: 0
-  distance: 20
-  maxDistance: 40
-  resetDistance: 0
-  pushBack: 1
+  distance: 100
+  maxDistance: 200
+  resetDistance: 100
+  pushBack: 6
   addedPassive: 0
   addedActive: 2
   delayAmount: 1
@@ -11618,10 +11618,10 @@ MonoBehaviour:
   isFinalNode: 0
   isClaimed: 0
   isBeginningNode: 0
-  distance: 20
-  maxDistance: 40
-  resetDistance: 0
-  pushBack: 1
+  distance: 35
+  maxDistance: 70
+  resetDistance: 35
+  pushBack: 2
   addedPassive: 0
   addedActive: 2
   delayAmount: 1
@@ -11776,10 +11776,10 @@ MonoBehaviour:
   isFinalNode: 1
   isClaimed: 0
   isBeginningNode: 0
-  distance: 20
-  maxDistance: 40
-  resetDistance: 0
-  pushBack: 1
+  distance: 500
+  maxDistance: 1000
+  resetDistance: 500
+  pushBack: 100
   addedPassive: 0
   addedActive: 2
   delayAmount: 1
