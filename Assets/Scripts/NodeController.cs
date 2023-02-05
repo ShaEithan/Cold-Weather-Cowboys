@@ -24,6 +24,8 @@ public class NodeController : MonoBehaviour
     public NodeController previousNode;
     public RootNode myRoot;
 
+    public ButtonTypes spriteChanger;
+
     private bool hasSetStats = false;
 
     // connector
@@ -81,21 +83,21 @@ public class NodeController : MonoBehaviour
         { 
             isClaimed = true; // change flag
 
-            currentNode.GetComponent<Renderer>().material.color = new(0, 255, 0); // claimed node turns green
+            currentNode.GetComponent<SpriteRenderer>().sprite = spriteChanger.claimedButton;// claimed node turns green
 
             if (nextNode1 != null)
             {
-                nextNode1.GetComponent<Renderer>().material.color = new(255, 255, 0); // if we have a nextNode turn it yellow
+                currentNode.GetComponent<SpriteRenderer>().sprite = spriteChanger.claimableButton; // if we have a nextNode turn it yellow
             }
 
             if (nextNode2 != null)
             {
-                nextNode2.GetComponent<Renderer>().material.color = new(255, 255, 0); // if we have a nextNode turn it yellow
+                currentNode.GetComponent<SpriteRenderer>().sprite = spriteChanger.claimableButton; // if we have a nextNode turn it yellow
             }
 
             if (nextNode3 != null)
             {
-                nextNode3.GetComponent<Renderer>().material.color = new(255, 255, 0); // if we have a nextNode turn it yellow
+                currentNode.GetComponent<SpriteRenderer>().sprite = spriteChanger.claimableButton; ; // if we have a nextNode turn it yellow
             }
 
             myRoot.changeNumClaimed(1); // add 1 to number of nodes claimed
@@ -121,12 +123,12 @@ public class NodeController : MonoBehaviour
             // normal node
             if (!isFinalNode)
             {
-                currentNode.GetComponent<Renderer>().material.color = new(0, 0, 0);
+                currentNode.GetComponent<SpriteRenderer>().sprite = spriteChanger.UnclaimableButton;
             }
             // final node  
             else 
             {
-                currentNode.GetComponent<Renderer>().material.color = new(255, 0, 0);
+                currentNode.GetComponent<SpriteRenderer>().sprite = spriteChanger.BossButton;
             }
         }
         
@@ -136,12 +138,17 @@ public class NodeController : MonoBehaviour
             // normal node
             if (!isFinalNode)
             {
-                currentNode.GetComponent<Renderer>().material.color = new(255, 255, 0);
+                currentNode.GetComponent<SpriteRenderer>().sprite = spriteChanger.claimableButton;
             }
             // final node
             else
             {
+<<<<<<< Updated upstream
                 currentNode.GetComponent<Renderer>().material.color = new(255, 0, 255);
+=======
+                // Play SFX Danger
+                currentNode.GetComponent<SpriteRenderer>().sprite = spriteChanger.BossButtonClickable;
+>>>>>>> Stashed changes
             }
         }
 
@@ -151,12 +158,12 @@ public class NodeController : MonoBehaviour
             // normal node
             if (!isBeginningNode)
             {
-                currentNode.GetComponent<Renderer>().material.color = new(0, 255, 0);
+                currentNode.GetComponent<SpriteRenderer>().sprite = spriteChanger.claimedButton;
             }
             // beginner node
             else 
             {
-                currentNode.GetComponent<Renderer>().material.color = new(128, 0, 128);
+                currentNode.GetComponent<SpriteRenderer>().sprite = spriteChanger.BeginningNode;
             }
         }
     }
