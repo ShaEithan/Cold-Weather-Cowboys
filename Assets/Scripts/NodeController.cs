@@ -4,7 +4,8 @@ using UnityEngine;
 
 // script for Node Game Object
 
-// remember, to specify what type we need. Either 1 or 2 so far.
+// NOTE: IF THE NODE IS A BEGINNING NODE THERE IS NO PREVIOUS NODE
+// ALSO MAKE SURE THERE IS A COLLIDER ON NODES SO THEY CAN CLICK PROPERLY
 
 public class NodeController : MonoBehaviour
 {
@@ -17,6 +18,12 @@ public class NodeController : MonoBehaviour
     public NodeController currentNode;
     public NodeController previousNode;
     public RootNode myRoot;
+
+    // connector
+    /*
+     connect from previous to current (Game Object)
+     connect to current to next (Game Object)
+    */
 
     // flags 
     public bool isFinalNode; // is this the final node in the sequence/path
@@ -72,7 +79,7 @@ public class NodeController : MonoBehaviour
 
             if (nextNode != null)
             {
-                currentNode.GetComponent<Renderer>().material.color = new(255, 255, 0); // if we have a nextNode turn it yellow
+                nextNode.GetComponent<Renderer>().material.color = new(255, 255, 0); // if we have a nextNode turn it yellow
             }
 
             myRoot.changeNumClaimed(1); // add 1 to number of nodes claimed
@@ -174,10 +181,10 @@ public class NodeController : MonoBehaviour
                 }
                 else
                 {
-                    currentNode.GetComponent<Renderer>().material.color = new(255, 0, 0); // change back to clickable node color 
+                    currentNode.GetComponent<Renderer>().material.color = new(0, 0, 0); // should be inaccessible node color 
                 }
                 
-                previousNode.GetComponent<Renderer>().material.color = new(0, 0, 255); // previous node should now be clickable
+                previousNode.GetComponent<Renderer>().material.color = new(255, 255, 0); // previous node should now be clickable
 
                 if (addedActive > 0)
                 {
