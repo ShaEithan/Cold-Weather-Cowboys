@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 
 public class RootNode : MonoBehaviour
 {
     // List of Nodes in our List;
     List<GameObject> nodeList;
+    private int numNodes = 10;
 
     // How many Nodes are currently claimed
     // tentative to change because 
@@ -18,7 +19,6 @@ public class RootNode : MonoBehaviour
 
 
     // getters
-
     // useful when needing the current growth rate, but also for UI
 
     public int getPassiveGrowth()
@@ -71,18 +71,12 @@ public class RootNode : MonoBehaviour
         numNodesClaimed += amount;
     }
 
-
     // Win Condition for Game
-
     public void winCondition()
     {
         int numNodes = nodeList.Count; // size of our list
-        if (numNodes == numNodesClaimed)
-        {
-            print("You Win!");
-        }
+        
     }
-
 
     // Start is called before the first frame update
     void Start()
@@ -93,8 +87,9 @@ public class RootNode : MonoBehaviour
     // Update is called once per frame
     void Update()
     { 
-        /*
-         win condition goes here
-         */
+        if (numNodes == numNodesClaimed)
+        {
+            SceneManager.LoadScene("VictoryScreen");
+        }
     }
 }
