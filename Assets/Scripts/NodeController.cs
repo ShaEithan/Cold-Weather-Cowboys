@@ -19,7 +19,11 @@ public class NodeController : MonoBehaviour
     public RootNode myRoot;
 
     //public GameObject[] neighborNode;
-    public NodeController neighborNode;
+    public NodeController previousNode;
+    public NodeController neighborNode1;
+    public NodeController neighborNode2;
+    //public List<GameObject> neighborNode;
+
 
     // connector
     /*
@@ -27,16 +31,16 @@ public class NodeController : MonoBehaviour
     */
 
     // flags 
-    public bool isClaimed; // have we claimed this?
+    public bool isClaimed = false; // have we claimed this?
     public bool isActive = false;
-    public bool isBeginningNode; // is this one of the original nodes
-    public bool isEndNode; // is this the end node in the sequence/path
+    public bool isBeginningNode = false; // is this one of the original nodes
+    public bool isEndNode = false; // is this the end node in the sequence/path
 
     // push and pull attributes
-    public int curDistanceToClaim; // distance needed to claim the next node, if 0 we can claim
-    public int maxDistanceToClaim; // if we want to claim this node, this is the max distance we have to traverse to get this node.
-
-    public int resetCurDistanceToClaim; // variable to reset once the current nodes is declaimed 
+    public int curDistanceToClaim = 30; // distance needed to claim the next node, if 0 we can claim
+    
+    public int maxDistanceToClaim = 60; // if we want to claim this node, this is the max distance we have to traverse to get this node.
+    public int resetCurDistanceToClaim = 30; // variable to reset once the current nodes is declaimed 
     
     public int pushBack; // updates on time interval to add distance to, interacts with curDistanceToClaim
 
@@ -69,7 +73,13 @@ public class NodeController : MonoBehaviour
     {
         // SFX Click
         // can't touch if not active: a neighbor node isn't claimed and it's not a beginning node
-        if (!isBeginningNode && neighborNode.isNodeClaimed())
+
+        if (!neighborNode1 == null)
+        {
+
+        }
+
+        if (!isBeginningNode && !neighborNode1.isNodeClaimed())
         {
             return;
         }
@@ -92,9 +102,9 @@ public class NodeController : MonoBehaviour
             myRoot.changePassiveGrowth(addedPassive);
 
             // activate unclaimed neighbors
-            if (!neighborNode.isActive && !neighborNode.isClaimed)
+            if (!neighborNode1.isActive && !neighborNode1.isClaimed)
             {
-                neighborNode.isActive = true;
+                neighborNode1.isActive = true;
             }
         }
     }
@@ -136,11 +146,11 @@ public class NodeController : MonoBehaviour
         {
             currentNode.GetComponent<Renderer>().material.color = new(255, 0, 0);
         }
-        else if (isNodeClaimed() && (isBeginningNode || neighborNode.isNodeClaimed())) // claimed nodes, but not beginning node (green)
+        else if (isNodeClaimed() && (isBeginningNode || neighborNode1.isNodeClaimed())) // claimed nodes, but not beginning node (green)
         {
             currentNode.GetComponent<Renderer>().material.color = new(0, 255, 0);
         }
-        else if (!isNodeClaimed() && neighborNode.isNodeClaimed()) // clickable and not end boss node (yellow)
+        else if (!isNodeClaimed() && neighborNode1.isNodeClaimed()) // clickable and not end boss node (yellow)
         {
             currentNode.GetComponent<Renderer>().material.color = new(255, 255, 0);
         }
@@ -168,9 +178,9 @@ public class NodeController : MonoBehaviour
             SceneManager.LoadScene("GameOver");
         } 
 
-        if (!neighborNode.isNodeClaimed())
+        if (!neighborNode1.isNodeClaimed())
         {
-            isClaimed = false;
+            //isClaimed = false;
             isActive = false;
             return;
         }
