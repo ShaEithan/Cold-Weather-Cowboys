@@ -24,6 +24,8 @@ public class NodeController : MonoBehaviour
     public NodeController previousNode;
     public RootNode myRoot;
 
+    private bool hasSetStats = false;
+
     // connector
     /*
      connect from previous to current (Game Object)
@@ -170,6 +172,16 @@ public class NodeController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (hasSetStats == false)
+        {
+            distance = maxDistance / 2;
+            resetDistance = maxDistance / 2;
+
+            pushBack = maxDistance / 10;
+            addedActive = maxDistance / 20;
+            addedPassive = maxDistance / 30;
+            hasSetStats = true;
+        }
 
         // lose condition goes here... if we lose initial beginner nodes, the planet can attack the main root and we die
 
