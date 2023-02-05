@@ -22,6 +22,7 @@ public class NodeController : MonoBehaviour
     public bool isFinalNode; // is this the final node in the sequence/path
     public bool isClaimed; // have we claimed this?
     public bool isBeginningNode; // is this one of the original 3 nodes
+    public bool isClickable;
 
     // push and pull attributes
 
@@ -81,7 +82,8 @@ public class NodeController : MonoBehaviour
 
 
         }
-        else if (!isClaimed)
+
+        if (!isClaimed)
         {
             curDistanceToClaim -= myRoot.getActiveGrowth();
         }
@@ -90,18 +92,26 @@ public class NodeController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // color stuff
-        if (isNodeClaimed() && (isBeginningNode || previousNode.isNodeClaimed())) // claimed
+        // color stuff (initial)
+        if (isBeginningNode) // beginner node color (cyan)
+        {
+            currentNode.GetComponent<Renderer>().material.color = new(0, 255, 255);
+        }
+        else if (isFinalNode) // final node color (red)
+        {
+            currentNode.GetComponent<Renderer>().material.color = new(255, 0, 0);
+        }
+        else if (isNodeClaimed() && (isBeginningNode || previousNode.isNodeClaimed())) // claimed nodes, but not beginning node (green)
         {
             currentNode.GetComponent<Renderer>().material.color = new(0, 255, 0);
         }
-        else if (!isNodeClaimed() && previousNode.isNodeClaimed()) // clickable
+        else if (!isNodeClaimed() && previousNode.isNodeClaimed()) // clickable and not final boss node (yellow)
         {
-            currentNode.GetComponent<Renderer>().material.color = new(0, 0, 255);
+            currentNode.GetComponent<Renderer>().material.color = new(255, 255, 0);
         }
-        else // unreachable
+        else // unreachable (black) 
         {
-            currentNode.GetComponent<Renderer>().material.color = new(255, 0, 0);
+            currentNode.GetComponent<Renderer>().material.color = new(0, 0, 0);
         }
     }
 
@@ -110,9 +120,12 @@ public class NodeController : MonoBehaviour
     {
 
         // lose condition goes here... if we lose initial beginner nodes, the planet can attack the main root and we die
-
+        
         /*
-           
+           if (isBeginnerNode && !isNodeClaimed()) 
+           {
+                go to lose scene ? 
+           }
         */ 
         
         if (isFinalNode && isNodeClaimed()) // meaning we're done with this path
@@ -130,30 +143,6 @@ public class NodeController : MonoBehaviour
         // if the planet has pushed back all the way, we unclaim the previous node and have to reclaim the previous one to start getting this one
         // again
 
-
-        if (curDistanceToClaim >= maxDistanceToClaim && !isFinalNode)
-        {
-            previousNode.isClaimed = false;
-
-            myRoot.numNodesClaimed--; // subtract a node claimed
-
-            previousNode.curDistanceToClaim = previousNode.resetCurDistanceToClaim;
-
-            currentNode.GetComponent<Renderer>().material.color = new(255, 0, 0); // can't click currentNode anymore
-            previousNode.GetComponent<Renderer>().material.color = new(0, 0, 255); // previous node should now be clickable
-
-            if (addedActive > 0)
-            {
-                myRoot.subtractActiveGrowth(previousNode.addedActive); 
-            }
-
-            if (addedPassive > 0)
-            {
-                myRoot.subtractPassiveGrowth(previousNode.addedPassive);
-            }
-
-        }
-
         Timer += Time.deltaTime;
 
         if (Timer >= delayAmount)
@@ -166,6 +155,39 @@ public class NodeController : MonoBehaviour
             {
                 curDistanceToClaim -= myRoot.getPassiveGrowth();
                 curDistanceToClaim += pushBack;
+            }
+
+            if (curDistanceToClaim >= maxDistanceToClaim)
+            {
+                previousNode.isClaimed = false;
+
+                myRoot.numNodesClaimed--; // subtract a node claimed
+
+                previousNode.curDistanceToClaim = previousNode.resetCurDistanceToClaim;
+                currentNode.curDistanceToClaim = currentNode.resetCurDistanceToClaim;
+
+                if (currentNode.isFinalNode)
+                {
+                    // change back to final Node color bc this should be inaccessble
+                    currentNode.GetComponent<Renderer>().material.color = new(255, 0, 0);
+                }
+                else
+                {
+                    currentNode.GetComponent<Renderer>().material.color = new(255, 0, 0); // change back to clickable node color 
+                }
+                
+                previousNode.GetComponent<Renderer>().material.color = new(0, 0, 255); // previous node should now be clickable
+
+                if (addedActive > 0)
+                {
+                    myRoot.subtractActiveGrowth(previousNode.addedActive);
+                }
+
+                if (addedPassive > 0)
+                {
+                    myRoot.subtractPassiveGrowth(previousNode.addedPassive);
+                }
+
             }
         }
 
