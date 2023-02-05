@@ -5,11 +5,16 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     // audio player
-    public AudioSource audioSource;
+    public AudioSource aS;
     public AudioClip[] audioClipArray;
 
     private static GameManager managerInstance;
     
+    [SerializeField] private AudioSource _musicSource1, _musicSource2, _sfxClick, sfxCapture, _sfxDanger, _sfxOvertaken, _sfxVictory, _sfxDefeat;
+
+    public int currentSound;
+    public bool sfxTrigger = false;
+
     void Awake()
     {
         DontDestroyOnLoad(this.gameObject);
@@ -24,14 +29,22 @@ public class GameManager : MonoBehaviour
     }
 
     // Start is called before the first frame update
-    void Start()
+    void Update()
     {
-        
+        if (sfxTrigger == true)
+        {
+            PlaySound();
+        }
     }
 
     // Update is called once per frame
-    void Update()
+
+    public void PlaySound(AudioClip clip)
     {
-        
+        //_sfxClick.PlayOneShot(clip);
+
+        aS.clip = audioClipArray[currentSound];
+        aS.PlayOneShot(aS.clip);
+        sfxTrigger = false;
     }
 }

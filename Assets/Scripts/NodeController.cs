@@ -11,6 +11,9 @@ using UnityEngine.SceneManagement;
 
 public class NodeController : MonoBehaviour
 {
+    // game manager
+    public GameObject manager;
+    public GameManager gameManager;
 
     // keeps track of what gameObjects are in our path
     // and so we can edit the root node's properties and
@@ -112,6 +115,8 @@ public class NodeController : MonoBehaviour
         if (!isClaimed)
         {
             // Play SFX Click
+            manager.currentSound = 3;
+            //manager.sfxTrigger = true;
             distance += myRoot.getActiveGrowth();
         }
     }
@@ -168,6 +173,10 @@ public class NodeController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // fetch game manager
+        manager = GameObject.FindWithTag("GameController");
+        gameManager = manager.GetComponent<GameManager>();
+
         // color stuff (initial)
         colorChange();
     }
