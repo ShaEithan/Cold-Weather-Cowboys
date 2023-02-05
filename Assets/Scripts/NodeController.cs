@@ -217,14 +217,14 @@ public class NodeController : MonoBehaviour
 
             // if this node isn't claimed, and the previous one is
             // there will be pushback and passive growth
-            if (!isNodeClaimed() && (previousNode.isNodeClaimed()))
+            if (!isNodeClaimed() && previousNode != null && (previousNode.isNodeClaimed()))
             {
                 distance += myRoot.getPassiveGrowth();
                 distance -= pushBack;
             }
 
             //  unclaim condition
-            if (distance <= 0 && isClaimed == true)
+            if (distance <= 0)
             {
                 if (isBeginningNode)
                 {
@@ -232,7 +232,7 @@ public class NodeController : MonoBehaviour
                     return;
                 }
 
-                isClaimed = false;
+               
                 previousNode.isClaimed = false;
 
                 colorChange();
