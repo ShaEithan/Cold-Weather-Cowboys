@@ -8285,7 +8285,7 @@ MonoBehaviour:
   nextNode2: {fileID: 0}
   nextNode3: {fileID: 0}
   currentNode: {fileID: 971673129}
-  previousNode: {fileID: 1341440355}
+  previousNode: {fileID: 546010364}
   myRoot: {fileID: 1635676056}
   spriteChanger: {fileID: 2137121000}
   isFinalNode: 1
