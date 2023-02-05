@@ -76,10 +76,12 @@ public class NodeController : MonoBehaviour
         {
             return;
         }
-
+        
+        // claim success
         if (distance >= maxDistance && !isClaimed)
         { 
             isClaimed = true; // change flag
+            // Play SFX Capture
 
             currentNode.GetComponent<Renderer>().material.color = new(0, 255, 0); // claimed node turns green
 
@@ -109,6 +111,7 @@ public class NodeController : MonoBehaviour
 
         if (!isClaimed)
         {
+            // Play SFX Click
             distance += myRoot.getActiveGrowth();
         }
     }
@@ -141,6 +144,7 @@ public class NodeController : MonoBehaviour
             // final node
             else
             {
+                // Play SFX Danger
                 currentNode.GetComponent<Renderer>().material.color = new(255, 0, 255);
             }
         }
@@ -220,7 +224,7 @@ public class NodeController : MonoBehaviour
             }
 
             //  unclaim condition
-            if (distance <= 0)
+            if (distance <= 0 && isClaimed == true)
             {
                 if (isBeginningNode)
                 {
@@ -228,9 +232,11 @@ public class NodeController : MonoBehaviour
                     return;
                 }
 
+                isClaimed = false;
                 previousNode.isClaimed = false;
 
                 colorChange();
+                // Play SFX Overtaken
 
                 myRoot.numNodesClaimed--; // subtract a node claimed
 
