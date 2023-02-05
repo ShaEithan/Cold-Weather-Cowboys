@@ -11,6 +11,9 @@ using UnityEngine.SceneManagement;
 
 public class NodeController : MonoBehaviour
 {
+    // game manager
+    public GameObject manager;
+    public GameManager gameManager;
 
     // keeps track of what gameObjects are in our path
     // and so we can edit the root node's properties and
@@ -23,8 +26,6 @@ public class NodeController : MonoBehaviour
     public NodeController currentNode;
     public NodeController previousNode;
     public RootNode myRoot;
-
-    public ButtonTypes spriteChanger;
 
     private bool hasSetStats = false;
 
@@ -78,26 +79,28 @@ public class NodeController : MonoBehaviour
         {
             return;
         }
-
+        
+        // claim success
         if (distance >= maxDistance && !isClaimed)
         { 
             isClaimed = true; // change flag
+            // Play SFX Capture
 
-            currentNode.GetComponent<SpriteRenderer>().sprite = spriteChanger.claimedButton;// claimed node turns green
+            currentNode.GetComponent<Renderer>().material.color = new(0, 255, 0); // claimed node turns green
 
             if (nextNode1 != null)
             {
-                currentNode.GetComponent<SpriteRenderer>().sprite = spriteChanger.claimableButton; // if we have a nextNode turn it yellow
+                nextNode1.GetComponent<Renderer>().material.color = new(255, 255, 0); // if we have a nextNode turn it yellow
             }
 
             if (nextNode2 != null)
             {
-                currentNode.GetComponent<SpriteRenderer>().sprite = spriteChanger.claimableButton; // if we have a nextNode turn it yellow
+                nextNode2.GetComponent<Renderer>().material.color = new(255, 255, 0); // if we have a nextNode turn it yellow
             }
 
             if (nextNode3 != null)
             {
-                currentNode.GetComponent<SpriteRenderer>().sprite = spriteChanger.claimableButton; ; // if we have a nextNode turn it yellow
+                nextNode3.GetComponent<Renderer>().material.color = new(255, 255, 0); // if we have a nextNode turn it yellow
             }
 
             myRoot.changeNumClaimed(1); // add 1 to number of nodes claimed
@@ -111,6 +114,9 @@ public class NodeController : MonoBehaviour
 
         if (!isClaimed)
         {
+            // Play SFX Click
+            manager.currentSound = 3;
+            //manager.sfxTrigger = true;
             distance += myRoot.getActiveGrowth();
         }
     }
@@ -123,12 +129,12 @@ public class NodeController : MonoBehaviour
             // normal node
             if (!isFinalNode)
             {
-                currentNode.GetComponent<SpriteRenderer>().sprite = spriteChanger.UnclaimableButton;
+                currentNode.GetComponent<Renderer>().material.color = new(0, 0, 0);
             }
             // final node  
             else 
             {
-                currentNode.GetComponent<SpriteRenderer>().sprite = spriteChanger.BossButton;
+                currentNode.GetComponent<Renderer>().material.color = new(255, 0, 0);
             }
         }
         
@@ -138,13 +144,13 @@ public class NodeController : MonoBehaviour
             // normal node
             if (!isFinalNode)
             {
-                currentNode.GetComponent<SpriteRenderer>().sprite = spriteChanger.claimableButton;
+                currentNode.GetComponent<Renderer>().material.color = new(255, 255, 0);
             }
             // final node
             else
             {
                 // Play SFX Danger
-                currentNode.GetComponent<SpriteRenderer>().sprite = spriteChanger.BossButtonClickable;
+                currentNode.GetComponent<Renderer>().material.color = new(255, 0, 255);
             }
         }
 
@@ -154,12 +160,12 @@ public class NodeController : MonoBehaviour
             // normal node
             if (!isBeginningNode)
             {
-                currentNode.GetComponent<SpriteRenderer>().sprite = spriteChanger.claimedButton;
+                currentNode.GetComponent<Renderer>().material.color = new(0, 255, 0);
             }
             // beginner node
             else 
             {
-                currentNode.GetComponent<SpriteRenderer>().sprite = spriteChanger.BeginningNode;
+                currentNode.GetComponent<Renderer>().material.color = new(128, 0, 128);
             }
         }
     }
@@ -167,6 +173,10 @@ public class NodeController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // fetch game manager
+        manager = GameObject.FindWithTag("GameController");
+        gameManager = manager.GetComponent<GameManager>();
+
         // color stuff (initial)
         colorChange();
     }
@@ -180,9 +190,9 @@ public class NodeController : MonoBehaviour
             distance = maxDistance / 2;
             resetDistance = maxDistance / 2;
 
-            pushBack = maxDistance / 10;
+            pushBack = maxDistance / 20;
             addedActive = maxDistance / 20;
-            addedPassive = maxDistance / 30;
+            addedPassive = maxDistance / 50;
             hasSetStats = true;
         }
 
@@ -231,9 +241,11 @@ public class NodeController : MonoBehaviour
                     return;
                 }
 
+               
                 previousNode.isClaimed = false;
 
                 colorChange();
+                // Play SFX Overtaken
 
                 myRoot.numNodesClaimed--; // subtract a node claimed
 
