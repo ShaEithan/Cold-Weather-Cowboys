@@ -811,7 +811,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1410730269}
         m_TargetAssemblyTypeName: ScreenSwitch, Assembly-CSharp
-        m_MethodName: ToGame
+        m_MethodName: ToTutorial
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
