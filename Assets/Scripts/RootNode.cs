@@ -76,7 +76,7 @@ public class RootNode : MonoBehaviour
 
     public void winCondition()
     {
-        int numNodes = nodeList.Count; // size of our list
+        int numNodes = 39; //nodeList.Count; // size of our list
         if (numNodes == numNodesClaimed)
         {
             SceneManager.LoadScene("TitleScreen");

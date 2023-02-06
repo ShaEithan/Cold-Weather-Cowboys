@@ -90,6 +90,7 @@ public class NodeController : MonoBehaviour
             dark red when completed
         */
 
+        // claim success
         if (distance >= maxDistance && !isClaimed)
         { 
             isClaimed = true; // change flag
@@ -98,17 +99,17 @@ public class NodeController : MonoBehaviour
 
             if (nextNode1 != null)
             {
-                currentNode.GetComponent<SpriteRenderer>().sprite = spriteChanger.claimableButton; // if we have a nextNode turn it yellow
+                nextNode1.GetComponent<SpriteRenderer>().sprite = spriteChanger.claimableButton; // if we have a nextNode turn it yellow
             }
 
             if (nextNode2 != null)
             {
-                currentNode.GetComponent<SpriteRenderer>().sprite = spriteChanger.claimableButton; // if we have a nextNode turn it yellow
+                nextNode2.GetComponent<SpriteRenderer>().sprite = spriteChanger.claimableButton; // if we have a nextNode turn it yellow
             }
 
             if (nextNode3 != null)
             {
-                currentNode.GetComponent<SpriteRenderer>().sprite = spriteChanger.claimableButton; ; // if we have a nextNode turn it yellow
+                nextNode3.GetComponent<SpriteRenderer>().sprite = spriteChanger.claimableButton; ; // if we have a nextNode turn it yellow
             }
 
             myRoot.changeNumClaimed(1); // add 1 to number of nodes claimed
@@ -116,10 +117,8 @@ public class NodeController : MonoBehaviour
             // add benefits to having node 
             myRoot.changeActiveGrowth(addedActive);
             myRoot.changePassiveGrowth(addedPassive);
-
-
         }
-
+        // passive growth
         if (!isClaimed)
         {
             distance += myRoot.getActiveGrowth();
@@ -129,7 +128,7 @@ public class NodeController : MonoBehaviour
     void colorChange()
     {
         // unreachable: if previous node not claimed
-        if (!isBeginningNode && !previousNode.isNodeClaimed() && !isClaimed) 
+        if (!isBeginningNode && (previousNode != null && !previousNode.isNodeClaimed()))//&& !isClaimed) 
         {
             // normal node
             if (!isFinalNode)
@@ -149,6 +148,7 @@ public class NodeController : MonoBehaviour
             // normal node
             if (!isBeginningNode)
             {
+                //Debug.Log("Cyan");
                 currentNode.GetComponent<SpriteRenderer>().sprite = spriteChanger.claimedButton;
             }
             // beginner node
@@ -164,6 +164,7 @@ public class NodeController : MonoBehaviour
             // normal node
             if (!isFinalNode)
             {
+                //Debug.Log("Yellow");
                 currentNode.GetComponent<SpriteRenderer>().sprite = spriteChanger.claimableButton;
             }
             // final node
@@ -187,6 +188,11 @@ public class NodeController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!isClaimed) 
+        {
+            colorChange();
+        }
+
         if (hasSetStats == false)
         {
             distance = maxDistance / 2;
@@ -203,26 +209,40 @@ public class NodeController : MonoBehaviour
 
         if (isBeginningNode && !isNodeClaimed()) 
         {
-          SceneManager.LoadScene("GameOver");
+            SceneManager.LoadScene("GameOver");
         }
 
         if (!isBeginningNode && !previousNode.isNodeClaimed())
         {
             isClaimed = false;
+            colorChange();
             return;
         }
+        /*
+        if (!isBeginningNode && ((nextNode1 != null && !nextNode1.isNodeClaimed()) || (nextNode2 != null && !nextNode2.isNodeClaimed()) || (nextNode3 != null && !nextNode3.isNodeClaimed())))
+        {
+            isClaimed = false;
+            colorChange();
+            return;
+        }
+        */
 
         if (isFinalNode && isNodeClaimed()) // meaning we're done with this path
         {
             return;
         }
 
-
         // if the planet has pushed back all the way, we unclaim the previous node and have to reclaim the previous one to start getting this one
         // again
 
-        Timer += Time.deltaTime;
+        if ((previousNode != null && previousNode.isClaimed == false) && (isClaimed == true))
+        {
+            isClaimed = false;
+            colorChange();
+        }
 
+        // periodic check
+        Timer += Time.deltaTime;
         if (Timer >= delayAmount)
         {
             Timer = 0f;
@@ -246,16 +266,12 @@ public class NodeController : MonoBehaviour
 
                 previousNode.isClaimed = false;
 
-               
-
-                colorChange();
+                //colorChange();
 
                 myRoot.numNodesClaimed--; // subtract a node claimed
 
                 previousNode.distance = previousNode.resetDistance;
-                currentNode.distance = currentNode.resetDistance;
-
-                
+                currentNode.distance = currentNode.resetDistance;                
 
                 // removes benefits
                 if (addedActive > 0)
