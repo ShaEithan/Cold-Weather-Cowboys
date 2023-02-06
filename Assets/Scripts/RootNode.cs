@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 
 public class RootNode : MonoBehaviour
 {
@@ -79,7 +79,7 @@ public class RootNode : MonoBehaviour
         int numNodes = nodeList.Count; // size of our list
         if (numNodes == numNodesClaimed)
         {
-            print("You Win!");
+            SceneManager.LoadScene("TitleScreen");
         }
     }
 

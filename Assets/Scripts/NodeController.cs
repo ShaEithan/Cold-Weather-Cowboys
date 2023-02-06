@@ -79,6 +79,17 @@ public class NodeController : MonoBehaviour
             return;
         }
 
+
+        /*color notes:
+            normal:
+            grey when locked and unlocked
+            yellow when completed
+
+            boss:
+            red when locked and unlocked
+            dark red when completed
+        */
+
         if (distance >= maxDistance && !isClaimed)
         { 
             isClaimed = true; // change flag
@@ -181,11 +192,12 @@ public class NodeController : MonoBehaviour
             distance = maxDistance / 2;
             resetDistance = maxDistance / 2;
 
-            pushBack = maxDistance / 20;
             addedActive = maxDistance / 20;
-            addedPassive = maxDistance / 50;
+            addedPassive = maxDistance / 80;
             hasSetStats = true;
         }
+
+        pushBack = (maxDistance-20)/20;
 
         // lose condition goes here... if we lose initial beginner nodes, the planet can attack the main root and we die
 

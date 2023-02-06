@@ -16,7 +16,7 @@ public class ScreenSwitch : MonoBehaviour
     }
     public void ToTutorial()
     {
-        SceneManager.LoadScene("TutorialScreen");
+        SceneManager.LoadScene("Tutorial");
     }
 
     public void ToGame()

@@ -21,6 +21,8 @@ public class GameManager : MonoBehaviour
 
     private static GameManager managerInstance;
 
+    //private float Timer = 0;
+
     void Awake()
     {
         DontDestroyOnLoad(this.gameObject);
@@ -68,6 +70,25 @@ public class GameManager : MonoBehaviour
         }
         else {
             tsMusic.volume = 0.0f;
+        }
+
+        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName ("TitleScreen") || SceneManager.GetActiveScene() == SceneManager.GetSceneByName ("Tutorial") || SceneManager.GetActiveScene() == SceneManager.GetSceneByName ("Victory") || SceneManager.GetActiveScene() == SceneManager.GetSceneByName ("GameOver"))
+        {
+            
+            if (Input.anyKey) {
+                if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName ("Victory") || SceneManager.GetActiveScene() != SceneManager.GetSceneByName ("GameOver"))
+                {
+                    //SceneManager.LoadScene("TitleScreen");
+                }
+                else if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName ("Tutorial")){
+                    //SceneManager.LoadScene("Game");
+                }
+            }
+
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                Application.Quit();
+            }
         }
     }
 }
