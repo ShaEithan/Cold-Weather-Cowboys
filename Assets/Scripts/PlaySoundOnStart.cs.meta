@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream:Assets/Scripts/PlaySoundOnStart.cs.meta
 fileFormatVersion: 2
 guid: 16b8b633883e1c04f9aa260ca30ec06a
 MonoImporter:
@@ -9,3 +10,16 @@ MonoImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+=======
+fileFormatVersion: 2
+guid: 1fb186ea84b1c41d3bfa5d9ed35940f1
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+>>>>>>> Stashed changes:Assets/Scripts/ButtonTypes.cs.meta

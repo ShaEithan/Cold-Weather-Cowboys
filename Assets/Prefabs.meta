@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream:Assets/Prefabs.meta
 fileFormatVersion: 2
 guid: b83055a87e8c1a4489d7780ac9913b9d
 folderAsset: yes
@@ -6,3 +7,12 @@ DefaultImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+=======
+fileFormatVersion: 2
+guid: b9d87ea3b2998394c9605210026b1a61
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+>>>>>>> Stashed changes:Assets/Scenes/GameOver.unity.meta
