@@ -3,7 +3,7 @@
 * [Video of GamePlay](https://www.youtube.com/watch?v=kDv3GrGEWeM&ab_channel=JoshuaStandridge)
 * Our [Submission](https://globalgamejam.org/2023/games/take-root-choke-world-1]) for GGJ Austin 2023! 
 
-**Game Description**
+**Game Description** <br/>
 You are the Chokeroot, a new invasive species. You have but one goal: choke the world. "It's like Plague Inc
 mixed with Cookie Clicker!"
 
