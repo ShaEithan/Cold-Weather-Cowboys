@@ -8,7 +8,7 @@ You are the Chokeroot, a new invasive species. You have but one goal: choke the 
 mixed with Cookie Clicker!"
 
 **Gameplay Images**
-![TitleScreen](RootMap.png)
+![TitleScreen](TitleScreen.png)
 ![Tutorial](Tutorial.png)
 ![RootMap](RootMap.png)
 ![Victory](WinningScreen.png)
