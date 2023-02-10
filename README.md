@@ -13,7 +13,7 @@ mixed with Cookie Clicker!"
 ![RootMap](RootMap.png)
 ![Victory](WinningScreen.png)
 
-**__Game Credits__**
+**__Team Cold Weather Cowboys__**
 * Maya Andow - 3D Art
 * Eriane Austria - 2D Art, UI
 * Eithan Austria - Programming, Game Design
