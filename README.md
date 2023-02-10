@@ -1,7 +1,7 @@
 # Take Root: Choke the World!
 
-[Video of GamePlay](https://www.youtube.com/watch?v=kDv3GrGEWeM&ab_channel=JoshuaStandridge)
-[GGJ Austin Submission Page](https://globalgamejam.org/2023/games/take-root-choke-world-1]
+* [Video of GamePlay](https://www.youtube.com/watch?v=kDv3GrGEWeM&ab_channel=JoshuaStandridge)
+* Our [Submission](https://globalgamejam.org/2023/games/take-root-choke-world-1] for GGJ Austin 2023! 
 
 **Game Description**
 You are the Chokeroot, a new invasive species. You have but one goal: choke the world. "It's like Plague Inc
@@ -14,10 +14,10 @@ mixed with Cookie Clicker!"
 ![Victory](WinningScreen.png)
 
 **__Game Credits__**
-Maya Andow - 3D Art
-Eriane Austria - 2D Art, UI
-Eithan Austria - Programming, Game Design
-Noah Carrico - Game Design
-Trent Fowler - Composer, Sound Design
-Joshua Standridge - Game Design, Composer, Programming
+* Maya Andow - 3D Art
+* Eriane Austria - 2D Art, UI
+* Eithan Austria - Programming, Game Design
+* Noah Carrico - Game Design
+* Trent Fowler - Composer, Sound Design
+* Joshua Standridge - Game Design, Composer, Programming
 
